@@ -39,6 +39,8 @@ export default async function IPData() {
                 <p>{data.location.city}</p>
                 <p>{data.location.country}</p>
                 <p>{data.location.timezone}</p>
+                <p>{data.location.latitude}</p>
+                <p>{data.location.longitude}</p>
                 <p>{data.network.autonomous_system.name}</p>
             </div>
         )
