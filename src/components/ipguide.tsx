@@ -1,4 +1,5 @@
 import { headers } from "next/headers"
+import Weather from "./clima"
 interface ResponseIP {
     ip: string
     network: {
@@ -71,13 +72,6 @@ export default async function IPData() {
     const weather: ResponseWeather = await resWeather.json()
 
     if (data.location && weather) {
-        return (
-            <div className='text-center'>
-                <p>Ciudad: {data.location.city}</p>
-                <p>Temperatura actual: {(weather.main.temp - 273.15).toFixed(2)}</p>
-                <p>Humedad: {weather.main.humidity}%</p>
-                <pre className='text-wrap'>{JSON.stringify(weather.weather[0])}</pre>
-            </div>
-        )
+        return <Weather weather={weather} />
     }
 }
