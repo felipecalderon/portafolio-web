@@ -38,7 +38,7 @@ export default function Weather({ weather }: { weather: WeatherInterface }) {
     return (
         <div className='flex flex-col md:flex-row items-center justify-center md:space-x-4 space-y-2 md:space-y-0 p-4 bg-fuchsia-900 text-white rounded-b-3xl shadow-2xl'>
             <p className='text-lg font-semibold text-center md:text-left'>{weather.name}</p>
-            <p className='text-lg font-semibold text-center md:text-left'>/</p>
+            <p className='text-lg font-semibold text-center md:text-left hidden md:block'>/</p>
             <p className='text-lg font-semibold text-center md:text-left'>{checkClima(weather.weather[0].main)}</p>
             <Image src={url} alt='Icono del clima' className='w-10 h-10' />
             <p className='text-lg font-semibold text-center md:text-left'>Temperatura: {(weather.main.temp - 273.15).toFixed(1)}°C</p>
