@@ -30,7 +30,7 @@ interface ResponseWeather {
     weather: [
         {
             id: number
-            main: string
+            main: "Clouds" | "Thunderstorm" | "Drizzle" | "Rain" | "Snow" | "Atmosphere" | "Clear"
             description: string
             icon: string
         }
@@ -64,14 +64,60 @@ export default async function IPData() {
 
     const res = await fetch(`https://ip.guide/${ip}`)
     const data: ResponseIP = await res.json()
-    if (!data.location) return null
 
     const resWeather = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${data.location.latitude}&lon=${data.location.longitude}&appid=${process.env.CLIMA_API}`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${data.location?.latitude}&lon=${data.location?.longitude}&appid=${process.env.CLIMA_API}`
     )
     const weather: ResponseWeather = await resWeather.json()
 
     if (data.location && weather) {
         return <Weather weather={weather} />
+    } else {
+        return <Weather weather={demoWeather} />
     }
+}
+
+const demoWeather: ResponseWeather = {
+    coord: {
+        lon: -72.5992,
+        lat: -38.7315,
+    },
+    weather: [
+        {
+            id: 804,
+            main: "Clouds",
+            description: "overcast clouds",
+            icon: "04n",
+        },
+    ],
+    base: "stations",
+    main: {
+        temp: 279.58,
+        feels_like: 279.58,
+        temp_min: 279.58,
+        temp_max: 279.58,
+        pressure: 1018,
+        humidity: 85,
+        sea_level: 1018,
+        grnd_level: 1000,
+    },
+    visibility: 10000,
+    wind: {
+        speed: 0.58,
+        deg: 253,
+        gust: 0.53,
+    },
+    clouds: {
+        all: 100,
+    },
+    dt: 1723515853,
+    sys: {
+        country: "CL",
+        sunrise: 1723462788,
+        sunset: 1723500664,
+    },
+    timezone: -14400,
+    id: 3870011,
+    name: "Temuco",
+    cod: 200,
 }

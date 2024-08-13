@@ -1,7 +1,7 @@
 import Contacto from "@/components/contacto"
 import Experiencias from "@/components/experiencia"
 import Habilidades from "@/components/habilidades"
-import IPData from "@/components/ipguide"
+import Clima from "@/components/ipguide"
 import SobreMi from "@/components/sobre-mi"
 
 export default function Home() {
@@ -12,14 +12,14 @@ export default function Home() {
                 <p className='mt-2 text-xl'>Desarrollador Web FullStack</p>
                 <p className='mt-1'>Landing page | Ecommerce | Blogs | Sistemas | Apps</p>
             </header>
+            <Clima />
 
-            <main className='container mx-auto space-y-20 mt-10 p-8 bg-white shadow-md rounded-lg max-w-2xl'>
+            <main className='container mx-auto space-y-20 mt-10 p-8 bg-white rounded-lg max-w-2xl shadow-2xl'>
                 <SobreMi />
                 <Experiencias />
                 <Habilidades />
                 <Contacto />
             </main>
-            <IPData />
             <footer className='bg-indigo-800 text-white p-4 text-center mt-16'>
                 <p>&copy; 2024 Felipe Eduardo Calderón</p>
             </footer>

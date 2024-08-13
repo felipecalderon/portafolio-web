@@ -1,11 +1,12 @@
 import { Image } from "@nextui-org/react"
+type WeatherCondition = "Clouds" | "Thunderstorm" | "Drizzle" | "Rain" | "Snow" | "Atmosphere" | "Clear"
 
 interface WeatherInterface {
     coord: { lon: number; lat: number }
     weather: [
         {
             id: number
-            main: string
+            main: WeatherCondition
             description: string
             icon: string
         }
@@ -33,14 +34,29 @@ interface WeatherInterface {
 }
 
 export default function Weather({ weather }: { weather: WeatherInterface }) {
-    console.log(weather)
     const url = `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`
     return (
-        <div className='text-center'>
-            <p>Ciudad: {weather.name}</p>
-            <p>Temperatura actual: {(weather.main.temp - 273.15).toFixed(2)}°C</p>
-            <p>Humedad: {weather.main.humidity}%</p>
-            <Image src={url} />
+        <div className='flex flex-col md:flex-row items-center justify-center md:space-x-4 space-y-2 md:space-y-0 p-4 bg-fuchsia-900 text-white rounded-b-3xl shadow-2xl'>
+            <p className='text-lg font-semibold text-center md:text-left'>{weather.name}</p>
+            <p className='text-lg font-semibold text-center md:text-left'>/</p>
+            <p className='text-lg font-semibold text-center md:text-left'>{checkClima(weather.weather[0].main)}</p>
+            <Image src={url} alt='Icono del clima' className='w-10 h-10' />
+            <p className='text-lg font-semibold text-center md:text-left'>Temperatura: {(weather.main.temp - 273.15).toFixed(1)}°C</p>
+            <p className='text-lg font-semibold text-center md:text-left'>Humedad: {weather.main.humidity}%</p>
         </div>
     )
+}
+
+const checkClima = (main: WeatherCondition): string => {
+    const translations: Record<WeatherCondition, string> = {
+        Clouds: "Nublado",
+        Thunderstorm: "Tormenta",
+        Drizzle: "Llovizna",
+        Rain: "Lluvia",
+        Snow: "Nieve",
+        Atmosphere: "Fenómeno atmosférico",
+        Clear: "Despejado",
+    }
+
+    return translations[main]
 }
