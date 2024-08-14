@@ -60,7 +60,6 @@ interface ResponseWeather {
 export default async function IPData() {
     const header = headers()
     const ip = (header.get("x-forwarded-for") ?? "127.0.0.1").split(",")[0]
-    console.log(header.get("x-forwarded-for"))
 
     const res = await fetch(`https://ip.guide/${ip}`)
     const data: ResponseIP = await res.json()
@@ -70,11 +69,7 @@ export default async function IPData() {
     )
     const weather: ResponseWeather = await resWeather.json()
 
-    if (data.location && weather) {
-        return <Weather weather={weather} />
-    } else {
-        return <Weather weather={demoWeather} />
-    }
+    return <Weather weather={data.location && weather ? weather : demoWeather} />
 }
 
 const demoWeather: ResponseWeather = {

@@ -1,3 +1,5 @@
+import { Habilidadestxt } from "@/interfaces/global.interfaces"
+import { IconType } from "react-icons"
 import { AiFillOpenAI } from "react-icons/ai"
 import { DiScrum } from "react-icons/di"
 import { FaGithub, FaNodeJs, FaReact, FaWordpress } from "react-icons/fa6"
@@ -5,7 +7,12 @@ import { RiNextjsFill } from "react-icons/ri"
 import { SiRedux, SiTailwindcss, SiTypescript, SiWoo } from "react-icons/si"
 import { TbApi } from "react-icons/tb"
 
-export const habilidades = [
+interface Habilidades {
+    nombre: Habilidadestxt
+    Icono: IconType
+}
+
+export const habilidades: Habilidades[] = [
     {
         nombre: "Wordpress",
         Icono: FaWordpress,

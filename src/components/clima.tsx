@@ -36,7 +36,7 @@ interface WeatherInterface {
 export default function Weather({ weather }: { weather: WeatherInterface }) {
     const url = `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`
     return (
-        <div className='flex flex-col md:flex-row items-center justify-center md:space-x-4 space-y-2 md:space-y-0 p-4 bg-fuchsia-900 text-white rounded-b-3xl shadow-2xl'>
+        <div className='flex flex-col md:flex-row items-center justify-center md:space-x-4 space-y-1 md:space-y-0 p-4 bg-amber-500 text-white rounded-b-medium md:rounded-b-3xl shadow-2xl'>
             <p className='text-lg font-semibold text-center md:text-left'>{weather.name}</p>
             <p className='text-lg font-semibold text-center md:text-left hidden md:block'>/</p>
             <p className='text-lg font-semibold text-center md:text-left'>{checkClima(weather.weather[0].main)}</p>
