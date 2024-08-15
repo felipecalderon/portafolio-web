@@ -44,7 +44,7 @@ export default function Weather({ weather }: { weather: WeatherInterface }) {
                     src='https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/fa45nfrjf2hyhdzpbryu'
                 />
             </div>
-            <div className='flex flex-col md:flex-row items-center justify-center md:space-x-4 space-y-1 md:space-y-0 p-4 pt-28 bg-amber-500 text-white rounded-b-medium md:rounded-b-3xl shadow-2xl'>
+            <div className='flex flex-col md:flex-row items-center justify-center md:space-x-4 space-y-1 md:space-y-0 p-4 pt-28 bg-amber-500 text-white rounded-b-medium md:rounded-b-3xl md:shadow-2xl'>
                 <p className='text-lg font-semibold text-center md:text-left'>{weather.name}</p>
                 <p className='text-lg font-semibold text-center md:text-left hidden md:block'>/</p>
                 <p className='text-lg font-semibold text-center md:text-left'>{checkClima(weather.weather[0].main)}</p>

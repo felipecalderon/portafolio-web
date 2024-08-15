@@ -11,7 +11,7 @@ export default function Home() {
             <Header />
             <Clima />
 
-            <main className='container mx-auto space-y-10 mt-10 p-8 bg-white rounded-lg max-w-2xl shadow-2xl'>
+            <main className='container mx-auto space-y-20 md:space-y-10 md:mt-10 p-8 bg-white rounded-lg max-w-2xl shadow-2xl'>
                 <SobreMi />
                 <Experiencias />
                 <Habilidades />
