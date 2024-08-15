@@ -9,7 +9,7 @@ export default function SobreMi() {
                 <span className='text-xs italic'>(agencia de turismo - 2017)</span>.
             </p>
             <p className='text-sm italic'>
-                Poseo una gran paciencia y capacidad para comprender lógica de negocios, encuentro fácilmente soluciones sencillas o problemas complejos.
+                Poseo una gran paciencia y capacidad para comprender lógica de negocios, encuentro fácilmente soluciones sencillas a problemas complejos.
             </p>
         </section>
     )
