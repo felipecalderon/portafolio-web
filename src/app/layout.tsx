@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { NextUIProvider } from "@nextui-org/react"
-
+import { Toaster } from "sonner"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -20,6 +20,7 @@ export default function RootLayout({
             <body className={`bg-indigo-50 ${inter.className}`}>
                 <NextUIProvider>{children}</NextUIProvider>
             </body>
+            <Toaster position='top-center' />
         </html>
     )
 }

@@ -1,5 +1,6 @@
 import { headers } from "next/headers"
 import Weather from "./clima"
+import { Image } from "@nextui-org/react"
 interface ResponseIP {
     ip: string
     network: {
@@ -69,7 +70,11 @@ export default async function IPData() {
     )
     const weather: ResponseWeather = await resWeather.json()
 
-    return <Weather weather={data.location && weather ? weather : demoWeather} />
+    return (
+        <div className=''>
+            <Weather weather={data.location && weather ? weather : demoWeather} />
+        </div>
+    )
 }
 
 const demoWeather: ResponseWeather = {

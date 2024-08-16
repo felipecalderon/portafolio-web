@@ -11,3 +11,10 @@ export type Habilidadestxt =
     | "Rest API"
     | "NodeJS"
     | "Desarrollo Ágil"
+
+export interface ContactForm {
+    correo: string
+    nombre: string
+    asunto: string
+    mensaje: string
+}

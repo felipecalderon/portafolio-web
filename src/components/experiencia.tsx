@@ -7,6 +7,7 @@ import { AiOutlineGlobal } from "react-icons/ai"
 import ModalImg from "./modal-img"
 import { Habilidadestxt } from "@/interfaces/global.interfaces"
 import { useState } from "react"
+import { BsCalendar3 } from "react-icons/bs"
 
 export default function Experiencias() {
     const [habilidades, _setHabilidades] = useState<Habilidadestxt[]>(["NextJS", "React", "Wordpress", "Woocommerce"])
@@ -21,8 +22,8 @@ export default function Experiencias() {
 
     return (
         <>
-            <section className='text-center'>
-                <h2 className='text-2xl font-semibold mb-4'>Experiencias</h2>
+            <section className=''>
+                <h2 className='text-2xl font-semibold mb-4 text-center'>Experiencias</h2>
                 <div className='flex flex-wrap justify-center gap-2 mb-2'>
                     {habilidades.map((h) => (
                         <Button
@@ -65,10 +66,10 @@ export default function Experiencias() {
                                         <div>
                                             <h3 className='text-lg font-bold text-blue-800'>{nombre}</h3>
                                             <Link href={web} target='_blank' className='flex gap-1 items-center text-blue-600'>
-                                                <AiOutlineGlobal /> <p>{lugar}</p>
+                                                <AiOutlineGlobal className='w-6' /> <p>{lugar}</p>
                                             </Link>
-                                            <p className='text-gray-600'>
-                                                {mesNombre} | {anio}
+                                            <p className='text-gray-600 inline-flex items-center gap-1'>
+                                                <BsCalendar3 className='w-6' /> {mesNombre} | {anio}
                                             </p>
                                         </div>
                                         <ModalImg img={img} />
