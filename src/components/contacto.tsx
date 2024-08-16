@@ -28,9 +28,9 @@ export default function Contacto() {
                 },
                 body: JSON.stringify(form),
             })
-            console.log(res)
             if (res.ok) {
                 toast.success("Enviado exitosamente, ¡muchas gracias!", { className: "bg-green-600 text-white" })
+                setForm({ asunto: "", correo: "", mensaje: "", nombre: "" })
             } else {
                 toast.error("Hubo un error al enviar el mensaje", { className: "bg-red-600 text-white" })
             }
@@ -43,7 +43,6 @@ export default function Contacto() {
 
     useEffect(() => {
         const isValid = Object.values(form).every((value) => value.trim() !== "")
-        console.log(isValid)
         setValid(isValid)
     }, [form])
     return (
@@ -52,12 +51,13 @@ export default function Contacto() {
             <p className='mb-4'>Escríbeme y nos reunimos online</p>
             <div>
                 <form onSubmit={handleSubmitForm} className='space-y-3'>
-                    <Input name='correo' type='email' label='Correo' onChange={(e) => setForm({ ...form, correo: e.target.value })} />
-                    <Input name='nombre' label='Nombre completo' onChange={(e) => setForm({ ...form, nombre: e.target.value })} />
-                    <Input name='asunto' label='Asunto' onChange={(e) => setForm({ ...form, asunto: e.target.value })} />
+                    <Input name='correo' type='email' label='Correo' value={form.correo} onChange={(e) => setForm({ ...form, correo: e.target.value })} />
+                    <Input name='nombre' label='Nombre completo' value={form.nombre} onChange={(e) => setForm({ ...form, nombre: e.target.value })} />
+                    <Input name='asunto' label='Asunto' value={form.asunto} onChange={(e) => setForm({ ...form, asunto: e.target.value })} />
                     <Textarea
                         label='Detalle de la solicitud'
                         placeholder='Ej. Necesito una página para mi tienda de...'
+                        value={form.mensaje}
                         onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
                     />
                     <Button color='primary' type='submit' isDisabled={isLoading} isLoading={isLoading}>
