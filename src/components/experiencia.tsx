@@ -10,7 +10,7 @@ import { useState } from "react"
 import { BsCalendar3 } from "react-icons/bs"
 
 export default function Experiencias() {
-    const [habilidades, _setHabilidades] = useState<Habilidadestxt[]>(["NextJS", "React", "Wordpress", "Woocommerce"])
+    const [habilidades, _setHabilidades] = useState<Habilidadestxt[]>(["React", "Wordpress", "IA - Openai"])
     const [habilidad, setHabilidad] = useState<Habilidadestxt | null>(null)
     const [page, setPage] = useState(1)
     const [size, _setSize] = useState(3)
@@ -48,7 +48,7 @@ export default function Experiencias() {
                         color='warning'
                         radius='full'
                         size='sm'
-                        className='cursor-pointer hover:scale-105 transition-all focus:bg-blue-800'
+                        className='cursor-pointer hover:scale-105 transition-all focus:bg-amber-600'
                     >
                         Ver Todo ({experiencias.length})
                     </Button>
