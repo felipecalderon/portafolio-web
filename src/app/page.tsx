@@ -13,7 +13,7 @@ export default function Home() {
             <div id='header' className='relative'>
                 <HeaderTop>
                     <Clima />
-                    <h1 className='text-3xl font-bold'>Felipe Eduardo Calderón</h1>
+                    <h1 className='text-3xl font-bold'>Felipe Calderón Espinoza</h1>
                     <p className='mt-2 text-xl'>Desarrollador Web FullStack</p>
                     <p className='mt-1 text-xs uppercase'>Landing page | Ecommerce | Blogs | Sistemas | Apps</p>
                 </HeaderTop>
