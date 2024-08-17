@@ -3,6 +3,7 @@ import { URL } from "@/contants/envs"
 import { ContactForm } from "@/interfaces/global.interfaces"
 import { Button, Input, Textarea } from "@nextui-org/react"
 import { FormEvent, useEffect, useState } from "react"
+import { RiMailSendFill } from "react-icons/ri"
 import { toast } from "sonner"
 
 export default function Contacto() {
@@ -60,7 +61,7 @@ export default function Contacto() {
                         value={form.mensaje}
                         onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
                     />
-                    <Button color='primary' type='submit' isDisabled={isLoading} isLoading={isLoading}>
+                    <Button color='primary' type='submit' isDisabled={isLoading} isLoading={isLoading} endContent={<RiMailSendFill className='text-lg' />}>
                         {!isLoading ? "Enviar" : "Enviando"}
                     </Button>
                 </form>

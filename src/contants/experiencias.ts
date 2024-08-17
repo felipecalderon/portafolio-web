@@ -12,12 +12,30 @@ interface Experiencias {
 
 export const experiencias: Experiencias[] = [
     {
+        nombre: "Sitio web a medida para Abogada",
+        fecha: "2024-01",
+        lugar: "Asesoría Manquilef",
+        web: "https://asesoriamanquilef.cl",
+        habilidades: ["IA - Openai", "Git / GitHub", "NextJS", "NodeJS", "TailwindCSS", "Rest API", "React"],
+        descripcion: "Sitio web personalizado para abogada con chatbot de inteligencia artificial capacitado para atender consultas básicas legales en Chile.",
+        img: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/xt2ujbm0kqfgclrl4wt2",
+    },
+    {
+        nombre: "Sistema médico para doctores y donantes",
+        fecha: "2024-07",
+        lugar: "Ley Justina Argentina",
+        web: "https://justinaio.vercel.app",
+        habilidades: ["Desarrollo Ágil", "Git / GitHub", "NextJS", "NodeJS", "TailwindCSS", "Rest API", "React"],
+        descripcion: "Portal web para conectar médicos, pacientes y donantes de sangre, en torno a la ley Justina de Argentina.",
+        img: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/h0cn3z1jyqsvhc3kpxww",
+    },
+    {
         nombre: "Desarrollo de Software ERP",
         fecha: "2023-03",
         lugar: "Calzados D3SI",
         web: "https://desiapp.vercel.cl",
-        habilidades: ["Desarrollo Ágil", "Git / GitHub", "NextJS", "NodeJS", "TailwindCSS", "Rest API"],
-        descripcion: "Creador de sistema ERP para franquicia: Gestión de ventas, órdenes de compra, tiendas filiales y multi-usuarios.",
+        habilidades: ["Desarrollo Ágil", "Git / GitHub", "NextJS", "NodeJS", "TailwindCSS", "Rest API", "React"],
+        descripcion: "Sistema ERP para franquicia: Gestión de ventas, órdenes de compra, tiendas filiales y multi-usuarios.",
         img: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/niq0gtyimwdqqmjec3oa",
     },
     {
@@ -53,7 +71,7 @@ export const experiencias: Experiencias[] = [
         web: "https://productosmulpun.cl",
         lugar: "Mulpun",
         habilidades: ["Wordpress", "Woocommerce"],
-        descripcion: "Desarrollo de sitio web, generación de ecommerce, administración de redes sociales y diseño de publicaciones.",
+        descripcion: "Sitio web, generación de ecommerce, administración de redes sociales y diseño de publicaciones.",
         img: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/o7gmdbmsudra3tbrbvnx",
     },
     {
@@ -71,7 +89,7 @@ export const experiencias: Experiencias[] = [
         web: "https://web.fiscaliadelconsumidor.cl",
         lugar: "Fiscalía del Consumidor",
         habilidades: ["Wordpress", "Woocommerce"],
-        descripcion: "Diseño de sitio web para ONG 'Derecho de Consumo', gestionando comunidad y portal de noticias. Sitio web en WordPress.",
+        descripcion: "Portal web para ONG 'Derecho de Consumo', gestionando comunidad y portal de noticias. Sitio web en WordPress.",
         img: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/yxigbuxya1nqkilq33xq",
     },
 ]
