@@ -1,25 +1,33 @@
 "use client"
 import { URL } from "@/contants/envs"
 import { ContactForm } from "@/interfaces/global.interfaces"
-import { Button, Input, Textarea } from "@nextui-org/react"
-import { FormEvent, useEffect, useState } from "react"
+import { Button, Input, Select, SelectItem, Textarea } from "@nextui-org/react"
+import Link from "next/link"
+import { ChangeEvent, FormEvent, useEffect, useState } from "react"
+import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa6"
 import { RiMailSendFill } from "react-icons/ri"
 import { toast } from "sonner"
 
-export default function Contacto() {
-    const [form, setForm] = useState<ContactForm>({
-        correo: "",
-        nombre: "",
-        asunto: "",
-        mensaje: "",
-    })
+const initialForm = { correo: "", nombre: "", asunto: "", mensaje: "" }
 
+export default function Contacto() {
+    const [form, setForm] = useState<ContactForm>(initialForm)
+    const [selected, setSelected] = useState(1)
     const [isValid, setValid] = useState(false)
     const [isLoading, setLoading] = useState(false)
 
     const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        if (!isValid) return toast.error("Debe completar todos los campos", { className: "bg-red-600 text-white" })
+
+        let asunto
+        if (selected === 1) asunto = "Necesito un sitio web simple (no tienda)"
+        if (selected === 2) asunto = "Necesito una tienda online sin pasarela de pagos"
+        if (selected === 3) asunto = "Necesito una tienda online con pasarela de pagos"
+        if (selected === 4) asunto = "Necesito un sistema interno a medida"
+
+        if (!isValid) {
+            return toast.error("Debe completar todos los campos", { className: "bg-red-600 text-white" })
+        }
         try {
             setLoading(true)
             const res = await fetch(`${URL}/api/mail`, {
@@ -27,11 +35,11 @@ export default function Contacto() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(form),
+                body: JSON.stringify({ ...form, asunto: selected !== 5 ? asunto : form.asunto }),
             })
             if (res.ok) {
                 toast.success("Enviado exitosamente, ¡muchas gracias!", { className: "bg-green-600 text-white" })
-                setForm({ asunto: "", correo: "", mensaje: "", nombre: "" })
+                setForm(initialForm)
             } else {
                 toast.error("Hubo un error al enviar el mensaje", { className: "bg-red-600 text-white" })
             }
@@ -42,36 +50,77 @@ export default function Contacto() {
         }
     }
 
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setForm({ ...form, [e.target.name]: e.target.value })
+    }
+
+    const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        const selection = Number(e.target.value)
+        setSelected(selection)
+        setForm({ ...form, asunto: "Quiero..." })
+    }
+
     useEffect(() => {
-        const isValid = Object.values(form).every((value) => value.trim() !== "")
+        const isValid = Object.values(form).every((value) => {
+            return value.trim() !== ""
+        })
         setValid(isValid)
     }, [form])
+
     return (
         <section id='contact' className='text-center'>
             <h2 className='text-2xl font-semibold'>¿Quieres pasar al siguiente nivel digital?</h2>
             <p className='mb-4'>Escríbeme y nos reunimos online</p>
             <div>
                 <form onSubmit={handleSubmitForm} className='space-y-3'>
-                    <Input name='correo' type='email' label='Correo' value={form.correo} onChange={(e) => setForm({ ...form, correo: e.target.value })} />
-                    <Input name='nombre' label='Nombre completo' value={form.nombre} onChange={(e) => setForm({ ...form, nombre: e.target.value })} />
-                    <Input name='asunto' label='Asunto' value={form.asunto} onChange={(e) => setForm({ ...form, asunto: e.target.value })} />
+                    <Input name='correo' type='email' label='Correo' value={form.correo} onChange={handleInputChange} />
+                    <Input name='nombre' label='Nombre completo' value={form.nombre} onChange={handleInputChange} />
+                    <Select label='Seleccione una opción' onChange={handleSelectChange} defaultSelectedKeys={[selected.toString()]}>
+                        <SelectItem key={1}>Necesito un sitio web simple (sin tienda)</SelectItem>
+                        <SelectItem key={2}>Necesito una tienda online sin pasarela de pagos</SelectItem>
+                        <SelectItem key={3}>Necesito una tienda online con pasarela de pagos</SelectItem>
+                        <SelectItem key={4}>Necesito un sistema interno a medida</SelectItem>
+                        <SelectItem key={5}>Necesito otro tipo de asistencia digital</SelectItem>
+                    </Select>
+                    {selected === 5 && <Input name='asunto' label='¿Que tipo de servicio digital necesita?' value={form.asunto} onChange={handleInputChange} />}
                     <Textarea
+                        name='mensaje'
                         label='Detalle de la solicitud'
                         placeholder='Ej. Necesito una página para mi tienda de...'
                         value={form.mensaje}
-                        onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
+                        onChange={handleInputChange}
                     />
                     <Button color='primary' type='submit' isDisabled={isLoading} isLoading={isLoading} endContent={<RiMailSendFill className='text-lg' />}>
                         {!isLoading ? "Enviar" : "Enviando"}
                     </Button>
                 </form>
             </div>
-            <p className='mt-4'>
-                Encuéntrame en{" "}
-                <a href='https://github.com/felipecalderon' className='text-indigo-600'>
-                    GitHub
-                </a>
-            </p>
+            <div className='mt-8 space-y-2'>
+                <p>También me podrás encontrar en:</p>
+                <div className='flex gap-2 justify-center'>
+                    <Link
+                        href='https://github.com/felipecalderon'
+                        target='_blank'
+                        className='text-gray-800 inline-flex gap-1 items-center py-1 px-2 bg-slate-100 rounded-lg'
+                    >
+                        <FaGithub className='text-xl' /> GitHub
+                    </Link>
+                    <Link
+                        href='https://www.facebook.com/felipecalderon321/'
+                        target='_blank'
+                        className='text-blue-600 inline-flex gap-1 items-center py-1 px-2 bg-slate-100 rounded-lg'
+                    >
+                        <FaFacebookF className='text-xl' /> Facebook
+                    </Link>
+                    <Link
+                        href='https://www.linkedin.com/in/felipecalderone/'
+                        target='_blank'
+                        className='text-sky-600 inline-flex gap-1 items-center py-1 px-2 bg-slate-100 rounded-lg'
+                    >
+                        <FaLinkedin className='text-xl' /> LinkedIn
+                    </Link>
+                </div>
+            </div>
         </section>
     )
 }

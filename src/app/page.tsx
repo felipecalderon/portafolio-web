@@ -34,8 +34,8 @@ export default function Home() {
                 <Habilidades />
                 <Contacto />
             </main>
-            <footer className='bg-indigo-800 text-white p-4 text-center md:mt-16'>
-                <p>&copy; 2024 Felipe Eduardo Calderón</p>
+            <footer className='bg-sky-800 text-white p-4 text-center md:mt-16'>
+                <p>2024 &copy; Felipe Calderón | Derechos reservados sobre mi persona</p>
             </footer>
         </>
     )
