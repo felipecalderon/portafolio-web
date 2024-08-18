@@ -1,11 +1,12 @@
-import Contacto from "@/components/contacto"
+import ChatBot from "@/components/chatbot"
 import Experiencias from "@/components/experiencia"
 import Habilidades from "@/components/habilidades"
 import HeaderBottom from "@/components/header-bottom"
 import HeaderTop from "@/components/header-top"
 import Clima from "@/components/ipguide"
 import SobreMi from "@/components/sobre-mi"
-import { Image } from "@nextui-org/react"
+import SocialPages from "@/components/socials"
+import { Image, ScrollShadow } from "@nextui-org/react"
 
 export default function Home() {
     return (
@@ -32,7 +33,8 @@ export default function Home() {
             <main className='container mx-auto space-y-20 md:space-y-10 md:mt-10 p-8 bg-white rounded-lg max-w-2xl shadow-2xl'>
                 <Experiencias />
                 <Habilidades />
-                <Contacto />
+                <ChatBot />
+                <SocialPages />
             </main>
             <footer className='bg-sky-800 text-white p-4 text-center md:mt-16'>
                 <p>2024 &copy; Felipe Calderón | Derechos reservados sobre mi persona</p>

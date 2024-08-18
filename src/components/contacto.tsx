@@ -2,9 +2,7 @@
 import { URL } from "@/contants/envs"
 import { ContactForm } from "@/interfaces/global.interfaces"
 import { Button, Input, Select, SelectItem, Textarea } from "@nextui-org/react"
-import Link from "next/link"
 import { ChangeEvent, FormEvent, useEffect, useState } from "react"
-import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa6"
 import { RiMailSendFill } from "react-icons/ri"
 import { toast } from "sonner"
 
@@ -94,32 +92,6 @@ export default function Contacto() {
                         {!isLoading ? "Enviar" : "Enviando"}
                     </Button>
                 </form>
-            </div>
-            <div className='mt-8 space-y-2'>
-                <p>También me podrás encontrar en:</p>
-                <div className='flex gap-2 justify-center'>
-                    <Link
-                        href='https://github.com/felipecalderon'
-                        target='_blank'
-                        className='text-gray-800 inline-flex gap-1 items-center py-1 px-2 bg-slate-100 rounded-lg'
-                    >
-                        <FaGithub className='text-xl' /> GitHub
-                    </Link>
-                    <Link
-                        href='https://www.facebook.com/felipecalderon321/'
-                        target='_blank'
-                        className='text-blue-600 inline-flex gap-1 items-center py-1 px-2 bg-slate-100 rounded-lg'
-                    >
-                        <FaFacebookF className='text-xl' /> Facebook
-                    </Link>
-                    <Link
-                        href='https://www.linkedin.com/in/felipecalderone/'
-                        target='_blank'
-                        className='text-sky-600 inline-flex gap-1 items-center py-1 px-2 bg-slate-100 rounded-lg'
-                    >
-                        <FaLinkedin className='text-xl' /> LinkedIn
-                    </Link>
-                </div>
             </div>
         </section>
     )
