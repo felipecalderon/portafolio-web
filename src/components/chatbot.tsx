@@ -91,7 +91,14 @@ export default function ChatBot() {
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
                 />
-                <Button color='primary' className='text-xs' onClick={handleSendMessage} isLoading={loading} isDisabled={loading || !input}>
+                <Button
+                    color='primary'
+                    onMouseDown={(e) => e.preventDefault()}
+                    className='text-xs'
+                    onClick={handleSendMessage}
+                    isLoading={loading}
+                    isDisabled={loading || !input}
+                >
                     {loading ? "Espere..." : "Enviar"}
                 </Button>
             </div>

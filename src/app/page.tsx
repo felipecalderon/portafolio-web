@@ -6,12 +6,11 @@ import HeaderTop from "@/components/header-top"
 import Clima from "@/components/ipguide"
 import SobreMi from "@/components/sobre-mi"
 import SocialPages from "@/components/socials"
-import { Image, ScrollShadow } from "@nextui-org/react"
 
 export default function Home() {
     return (
         <>
-            <div id='header' className='relative'>
+            <section>
                 <HeaderTop>
                     <Clima />
                     <h1 className='text-3xl font-bold'>Felipe Calderón Espinoza</h1>
@@ -19,16 +18,9 @@ export default function Home() {
                     <p className='mt-1 text-xs uppercase'>Landing page | Ecommerce | Blogs | Sistemas | Apps</p>
                 </HeaderTop>
                 <HeaderBottom>
-                    <div className='absolute inset-0 flex justify-center'>
-                        <Image
-                            radius='full'
-                            className='w-52 h-52 object-cover -top-[104px] drop-shadow-2xl border-t-8 border-t-amber-400 border-b-8 border-b-sky-700'
-                            src='https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/fa45nfrjf2hyhdzpbryu'
-                        />
-                    </div>
                     <SobreMi />
                 </HeaderBottom>
-            </div>
+            </section>
 
             <main className='container mx-auto space-y-20 md:space-y-10 md:mt-10 p-8 bg-white rounded-lg max-w-2xl shadow-2xl'>
                 <Experiencias />
@@ -37,7 +29,12 @@ export default function Home() {
                 <SocialPages />
             </main>
             <footer className='bg-sky-800 text-white p-4 text-center md:mt-16'>
-                <p>2024 &copy; Felipe Calderón | Derechos reservados sobre mi persona</p>
+                <p>2024 &copy; Felipe Calderón</p>
+                <p className='max-w-3xl mx-auto px-4 text-pretty text-xs font-light'>
+                    Todos los derechos reservados sobre las imágenes y textos personales. Los íconos y otros elementos gráficos utilizados en este sitio son
+                    propiedad de sus respectivos autores y están sujetos a las licencias internacionales correspondientes. La reproducción de imágenes y textos
+                    personales sin permiso está prohibida, el uso no autorizado puede resultar en acciones legales.
+                </p>
             </footer>
         </>
     )
