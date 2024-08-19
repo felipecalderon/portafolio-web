@@ -55,7 +55,7 @@ export default function ChatBot() {
 
     return (
         <main className='rounded-lg space-y-3 py-3 bg-slate-100 px-2 shadow-lg'>
-            <ScrollShadow className='h-96' size={10} ref={messagesEndRef}>
+            <ScrollShadow className='h-80 sm:h-96' size={10} ref={messagesEndRef}>
                 <div className='flex-1'>
                     <div className='flex justify-start'>
                         <div className='p-3 rounded-lg max-w-xs break-words bg-amber-100 text-gray-800'>
@@ -86,21 +86,15 @@ export default function ChatBot() {
                     type='text'
                     color='primary'
                     radius='lg'
-                    placeholder='Escribe un mensaje...'
+                    placeholder={loading ? "...Cargando" : "Para enviar presiona ENTER o ->"}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
+                    // isDisabled={loading}
                     onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
                 />
-                <Button
-                    color='primary'
-                    onMouseDown={(e) => e.preventDefault()}
-                    className='text-xs'
-                    onClick={handleSendMessage}
-                    isLoading={loading}
-                    isDisabled={loading || !input}
-                >
+                {/* <Button color='primary' className='text-xs' onClick={handleSendMessage} isLoading={loading} isDisabled={loading || !input}>
                     {loading ? "Espere..." : "Enviar"}
-                </Button>
+                </Button> */}
             </div>
         </main>
     )
