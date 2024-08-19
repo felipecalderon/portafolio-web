@@ -39,7 +39,13 @@ export default function ChatBot() {
 
     // Función para hacer scroll hacia el final del chat
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+        const scrollContainer = messagesEndRef.current
+        if (scrollContainer) {
+            scrollContainer.scrollTo({
+                top: scrollContainer.scrollHeight,
+                behavior: "smooth", // Desplazamiento suave
+            })
+        }
     }
 
     // Hacer scroll cada vez que cambien los mensajes
@@ -48,11 +54,11 @@ export default function ChatBot() {
     }, [messages])
 
     return (
-        <main className='p-4 rounded-lg space-y-3 py-3'>
-            <ScrollShadow className='h-80' size={10}>
+        <main className='rounded-lg space-y-3 py-3 bg-slate-100 px-2 shadow-lg'>
+            <ScrollShadow className='h-96' size={10} ref={messagesEndRef}>
                 <div className='flex-1'>
                     <div className='flex justify-start'>
-                        <div className='p-3 rounded-lg max-w-xs break-words bg-yellow-100 text-gray-800'>
+                        <div className='p-3 rounded-lg max-w-xs break-words bg-amber-100 text-gray-800'>
                             <p className='text-xs italic'>Asesor Digital</p>
                             <p>¡Hola! Seré tu asesor digital virtual, estoy potenciado con IA, conversemos!</p>
                         </div>
@@ -73,12 +79,12 @@ export default function ChatBot() {
                             </div>
                         </div>
                     ))}
-                    <div ref={messagesEndRef} />
                 </div>
             </ScrollShadow>
             <div className='flex flex-row justify-center gap-2'>
                 <Input
                     type='text'
+                    color='primary'
                     radius='lg'
                     placeholder='Escribe un mensaje...'
                     value={input}
