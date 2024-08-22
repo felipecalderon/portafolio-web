@@ -68,8 +68,8 @@ export default function ChatBot() {
                             <div
                                 className={`p-3 rounded-lg max-w-xs break-words ${
                                     message.role === "user"
-                                        ? "dark:bg-amber-600 text-gray-800 dark:text-slate-100"
-                                        : "dark:bg-sky-700 text-gray-800 dark:text-slate-100"
+                                        ? "bg-sky-200 dark:bg-amber-600 text-gray-800 dark:text-slate-100"
+                                        : "bg-amber-100 dark:bg-sky-700 text-gray-800 dark:text-slate-100"
                                 }`}
                             >
                                 {message.role === "user" ? (
