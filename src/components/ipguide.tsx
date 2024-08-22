@@ -70,11 +70,7 @@ export default async function IPData() {
     )
     const weather: ResponseWeather = await resWeather.json()
 
-    return (
-        <div className=''>
-            <Weather weather={data.location && weather ? weather : demoWeather} />
-        </div>
-    )
+    return <Weather weather={data.location && weather ? weather : demoWeather} />
 }
 
 const demoWeather: ResponseWeather = {

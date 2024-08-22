@@ -22,7 +22,7 @@ export default function Experiencias() {
 
     return (
         <>
-            <section className=''>
+            <section>
                 <h2 className='text-2xl font-semibold mb-4 text-center'>Experiencias</h2>
                 <div className='flex flex-wrap justify-center gap-2 mb-2'>
                     {habilidades.map((h) => (
@@ -53,28 +53,25 @@ export default function Experiencias() {
                         Ver Todo ({experiencias.length})
                     </Button>
                 </div>
-                <div className='flex justify-center my-3'>
-                    <Pagination total={Math.ceil(filterExps.length / size)} page={page} initialPage={1} onChange={setPage} showControls />
-                </div>
                 <div className='space-y-4'>
                     {filterExps
                         .map(({ nombre, descripcion, lugar, fecha, web, img, habilidades }) => {
                             const { anio, mesNombre } = formatoFecha(fecha)
                             return (
-                                <div key={descripcion} className='p-4 bg-gray-50 border rounded-lg shadow-sm'>
+                                <div key={descripcion} className='p-4 bg-gray-50 dark:bg-sky-600 rounded-lg shadow-sm'>
                                     <div className='flex gap-2 justify-between'>
                                         <div>
-                                            <h3 className='text-lg font-bold text-blue-800'>{nombre}</h3>
-                                            <Link href={web} target='_blank' className='flex gap-1 items-center text-blue-600'>
+                                            <h3 className='text-lg font-bold text-blue-800 dark:text-slate-50'>{nombre}</h3>
+                                            <Link href={web} target='_blank' className='flex gap-1 items-center text-blue-600 dark:text-slate-100'>
                                                 <AiOutlineGlobal className='w-6' /> <p>{lugar}</p>
                                             </Link>
-                                            <p className='text-gray-600 inline-flex items-center gap-1'>
+                                            <p className='text-gray-600 inline-flex items-center gap-1 dark:text-slate-100'>
                                                 <BsCalendar3 className='w-6' /> {mesNombre} | {anio}
                                             </p>
                                         </div>
                                         <ModalImg img={img} />
                                     </div>
-                                    <p className='my-2'>{descripcion}</p>
+                                    <p className='my-2 dark:text-slate-100 text-gray-900'>{descripcion}</p>
                                     <div className='flex flex-wrap gap-2'>
                                         {habilidades.map((h) => (
                                             <Chip key={h} color='warning' size='sm' className='opacity-80 cursor-default'>
@@ -86,6 +83,9 @@ export default function Experiencias() {
                             )
                         })
                         .slice((page - 1) * size, size * page)}
+                </div>
+                <div className='flex justify-center my-3'>
+                    <Pagination color='default' total={Math.ceil(filterExps.length / size)} page={page} initialPage={1} onChange={setPage} showControls />
                 </div>
             </section>
         </>

@@ -9,7 +9,7 @@ export default function NewTooltip({ nombre, children }: { nombre: string; child
             <div
                 onMouseEnter={() => setOpen(true)}
                 onMouseLeave={() => setOpen(false)}
-                className='bg-gray-50 p-2 flex items-center justify-center gap-2 border rounded-lg shadow-sm hover:scale-110 hover:text-blue-700 transition-all'
+                className='bg-gray-50 dark:bg-sky-600 p-2 flex items-center justify-center gap-2 rounded-lg shadow-sm hover:scale-110 hover:text-blue-700 transition-all'
             >
                 {children}
             </div>

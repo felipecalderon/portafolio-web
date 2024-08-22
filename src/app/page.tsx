@@ -1,4 +1,5 @@
 import ChatBot from "@/components/chatbot"
+import VSCodeDemostracion from "@/components/demovscode"
 import Experiencias from "@/components/experiencia"
 import Habilidades from "@/components/habilidades"
 import HeaderBottom from "@/components/header-bottom"
@@ -10,25 +11,21 @@ import SocialPages from "@/components/socials"
 export default function Home() {
     return (
         <>
-            <section>
-                <HeaderTop>
-                    <Clima />
-                    <h1 className='text-3xl font-bold'>Felipe Calderón Espinoza</h1>
-                    <p className='mt-2 text-xl'>Desarrollador Web FullStack</p>
-                    <p className='mt-1 text-xs uppercase'>Landing page | Ecommerce | Blogs | Sistemas | Apps</p>
-                </HeaderTop>
+            <section className='relative'>
+                <Clima />
+                <VSCodeDemostracion />
+                <HeaderTop />
                 <HeaderBottom>
                     <SobreMi />
                 </HeaderBottom>
             </section>
-
-            <main className='container mx-auto space-y-20 md:space-y-10 md:mt-10 p-8 bg-white rounded-lg max-w-2xl shadow-2xl'>
+            <main className='container mx-auto space-y-20 md:space-y-10 md:mt-10 p-8 max-w-2xl'>
                 <Experiencias />
                 <Habilidades />
                 <ChatBot />
                 <SocialPages />
             </main>
-            <footer className='bg-sky-800 text-white p-4 text-center md:mt-16'>
+            <footer className='bg-sky-800 text-white p-4 text-center md:mt-3'>
                 <p>2024 &copy; Felipe Calderón</p>
                 <p className='max-w-3xl mx-auto px-4 text-pretty text-xs font-light'>
                     Todos los derechos reservados sobre las imágenes y textos personales. Los íconos y otros elementos gráficos utilizados en este sitio son

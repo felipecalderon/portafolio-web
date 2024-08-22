@@ -2,7 +2,10 @@ import Link from "next/link"
 
 export default function SobreMi() {
     return (
-        <section className='text-center space-y-4 text-pretty mt-10 max-w-4xl mx-auto px-6 z-20'>
+        <section className='text-center space-y-4 text-pretty -mt-10 max-w-4xl mx-auto px-6 z-20 bg-sky-500/80 pt-20 pb-6 rounded-lg'>
+            <h1 className='text-3xl font-bold drop-shadow-md shadow-black'>Felipe Calderón Espinoza</h1>
+            <p className='mt-2 text-xl'>Desarrollador Web FullStack</p>
+            <p className='mt-1 text-xs uppercase'>Landing page | Ecommerce | Blogs | Sistemas | Apps</p>
             <p className='text-xs uppercase'>Experto en diseño web e implementación de E-commerce (tiendas en línea).</p>
             <p className='text-sm text-pretty'>
                 ¡Desde Chile para el Mundo! Tengo 32 años, he trabajado de forma independiente hace más de 8 años, fundador y cofundador de varias pymes locales

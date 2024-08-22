@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='es'>
-            <body className={`bg-indigo-50 fondo-puntos ${inter.className}`}>
+            <body className={`bg-indigo-50 dark:bg-sky-800 fondo-puntos ${inter.className}`}>
                 <NextUIProvider>{children}</NextUIProvider>
             </body>
             <GoogleAnalytics gaId='AW-328593452' />

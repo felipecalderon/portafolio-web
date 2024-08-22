@@ -1,0 +1,17 @@
+.keyword:hover,
+.tag:hover,
+.content:hover {
+    font-weight: 900;
+}
+
+.keyword {
+    color: #569cd6; /* Azul para las palabras clave */
+}
+
+.tag {
+    color: #9cdcfe; /* Color para las etiquetas */
+}
+
+.content {
+    color: #d4d4d4; /* Color para el contenido */
+}

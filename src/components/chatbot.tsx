@@ -54,20 +54,22 @@ export default function ChatBot() {
     }, [messages])
 
     return (
-        <main className='rounded-lg space-y-3 py-3 bg-slate-100 px-2 shadow-lg'>
+        <div className='rounded-lg space-y-3 py-3 bg-slate-100 dark:bg-sky-600 px-2 shadow-lg'>
             <ScrollShadow className='h-80 sm:h-96' size={10} ref={messagesEndRef}>
                 <div className='flex-1'>
                     <div className='flex justify-start'>
-                        <div className='p-3 rounded-lg max-w-xs break-words bg-amber-100 text-gray-800'>
+                        <div className='p-3 rounded-lg max-w-xs break-words bg-amber-100 dark:bg-sky-700 text-gray-800 dark:text-slate-100'>
                             <p className='text-xs italic'>Asesor Digital</p>
-                            <p>¡Hola! Seré tu asesor digital virtual, estoy potenciado con IA, conversemos!</p>
+                            <p>¡Hola, conversemos! ¿Que necesitas?</p>
                         </div>
                     </div>
                     {messages.map((message) => (
                         <div key={message.content as string} className={`flex my-3 ${message.role === "user" ? "justify-end" : "justify-start"}`}>
                             <div
                                 className={`p-3 rounded-lg max-w-xs break-words ${
-                                    message.role === "user" ? "bg-sky-800 text-white" : "bg-amber-100 text-gray-800"
+                                    message.role === "user"
+                                        ? "dark:bg-amber-600 text-gray-800 dark:text-slate-100"
+                                        : "dark:bg-sky-700 text-gray-800 dark:text-slate-100"
                                 }`}
                             >
                                 {message.role === "user" ? (
@@ -84,18 +86,17 @@ export default function ChatBot() {
             <div className='flex flex-row justify-center gap-2'>
                 <Input
                     type='text'
-                    color='primary'
+                    color='warning'
                     radius='lg'
                     placeholder={loading ? "...Cargando" : "Para enviar presiona ENTER o ->"}
+                    classNames={{
+                        description: "#000",
+                    }}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    // isDisabled={loading}
                     onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
                 />
-                {/* <Button color='primary' className='text-xs' onClick={handleSendMessage} isLoading={loading} isDisabled={loading || !input}>
-                    {loading ? "Espere..." : "Enviar"}
-                </Button> */}
             </div>
-        </main>
+        </div>
     )
 }
