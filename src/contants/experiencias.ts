@@ -33,7 +33,7 @@ export const experiencias: Experiencias[] = [
         nombre: "Desarrollo de Software ERP",
         fecha: "2023-03",
         lugar: "Calzados D3SI",
-        web: "https://desiapp.vercel.cl",
+        web: "https://desiapp.vercel.app",
         habilidades: ["Desarrollo Ágil", "Git / GitHub", "NextJS", "NodeJS", "TailwindCSS", "Rest API", "React"],
         descripcion: "Sistema ERP para franquicia: Gestión de ventas, órdenes de compra, tiendas filiales y multi-usuarios.",
         img: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/niq0gtyimwdqqmjec3oa",
