@@ -53,7 +53,7 @@ export default function FloatingMenuMovil() {
                     </li>
                 </ul>
             </nav>
-            <div className='fixed md:hidden bottom-3 right-3 drop-shadow-md z-40'>
+            <div className='fixed md:hidden top-10 right-1 drop-shadow-md z-40'>
                 <DarkModeSwitcher />
             </div>
         </>
