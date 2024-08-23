@@ -9,7 +9,7 @@ export default async function Habilidades() {
             <div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4'>
                 {habilidades.map((habilidad) => (
                     <NewTooltip key={habilidad.nombre} nombre={habilidad.nombre}>
-                        <habilidad.Icono className='text-2xl dark:text-amber-100' />
+                        <habilidad.Icono className='text-2xl dark:text-amber-50' />
                     </NewTooltip>
                 ))}
             </div>

@@ -16,44 +16,46 @@ export default function FloatingMenuMovil() {
     }
 
     return (
-        <nav className='md:hidden fixed bottom-3 w-full z-30'>
-            <ul className='flex flex-row justify-center items-center gap-2'>
-                <li>
-                    <ButtonGroup variant='shadow'>
-                        <Button
-                            size='sm'
-                            startContent={<PiUserCircleCheckFill className='text-2xl text-white' />}
-                            radius='full'
-                            className='bg-sky-500 dark:bg-amber-500 text-white'
-                            onClick={() => scrollTo("about")}
-                        >
-                            Sobre mí
-                        </Button>
+        <>
+            <nav className='md:hidden fixed bottom-3 w-full z-30'>
+                <ul className='flex flex-row justify-center items-center gap-2'>
+                    <li>
+                        <ButtonGroup variant='shadow'>
+                            <Button
+                                size='sm'
+                                startContent={<PiUserCircleCheckFill className='text-2xl text-white' />}
+                                radius='full'
+                                className='bg-sky-500 dark:bg-amber-500 text-white'
+                                onClick={() => scrollTo("about")}
+                            >
+                                Sobre mí
+                            </Button>
 
-                        <Button
-                            size='sm'
-                            startContent={<GiBrain className='text-2xl text-white' />}
-                            radius='full'
-                            className='bg-sky-500 dark:bg-amber-500 text-white'
-                            onClick={() => scrollTo("exp")}
-                        >
-                            Experiencias
-                        </Button>
-                        <Button
-                            startContent={<IoChatbubbles className='text-2xl text-white' />}
-                            size='sm'
-                            radius='full'
-                            className='bg-sky-500 dark:bg-amber-500 text-white'
-                            onClick={() => scrollTo("chat")}
-                        >
-                            Contacto
-                        </Button>
-                    </ButtonGroup>
-                </li>
-                <li className='drop-shadow-xl'>
-                    <DarkModeSwitcher />
-                </li>
-            </ul>
-        </nav>
+                            <Button
+                                size='sm'
+                                startContent={<GiBrain className='text-2xl text-white' />}
+                                radius='full'
+                                className='bg-sky-500 dark:bg-amber-500 text-white'
+                                onClick={() => scrollTo("exp")}
+                            >
+                                Experiencias
+                            </Button>
+                            <Button
+                                startContent={<IoChatbubbles className='text-2xl text-white' />}
+                                size='sm'
+                                radius='full'
+                                className='bg-sky-500 dark:bg-amber-500 text-white'
+                                onClick={() => scrollTo("chat")}
+                            >
+                                Contacto
+                            </Button>
+                        </ButtonGroup>
+                    </li>
+                </ul>
+            </nav>
+            <div className='fixed md:hidden top-3 right-3 drop-shadow-md z-40'>
+                <DarkModeSwitcher />
+            </div>
+        </>
     )
 }

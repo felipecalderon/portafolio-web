@@ -19,7 +19,7 @@ export default function FloatingMenuDesktop() {
 
     return (
         <nav className='hidden md:block fixed top-1/3 right-0 mr-6'>
-            <ul className='flex flex-col gap-6'>
+            <ul className='flex flex-col gap-6 drop-shadow-xl'>
                 <li>
                     <Tooltip content='Acerca de mí' placement='left' shadow='lg' size='lg' showArrow>
                         <Button isIconOnly size='lg' className='bg-sky-500 dark:bg-amber-500' onClick={() => scrollTo("about")}>

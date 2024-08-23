@@ -45,10 +45,10 @@ export default function Experiencias() {
                             setPage(1)
                             setHabilidad(null)
                         }}
-                        color='warning'
+                        color='primary'
                         radius='full'
                         size='sm'
-                        className='cursor-pointer hover:scale-105 transition-all focus:bg-amber-600'
+                        className='cursor-pointer hover:scale-105 transition-all focus:bg-blue-800'
                     >
                         Ver Todo ({experiencias.length})
                     </Button>
@@ -63,7 +63,10 @@ export default function Experiencias() {
                                         <div>
                                             <h3 className='text-lg font-bold text-blue-800 dark:text-slate-50'>{nombre}</h3>
                                             <Link href={web} target='_blank' className='flex gap-1 items-center text-blue-600 dark:text-slate-100'>
-                                                <AiOutlineGlobal className='w-6' /> <p>{lugar}</p>
+                                                <AiOutlineGlobal className='w-6' />{" "}
+                                                <p>
+                                                    {lugar} <span className='text-sm'>(ver sitio)</span>
+                                                </p>
                                             </Link>
                                             <p className='text-gray-600 inline-flex items-center gap-1 dark:text-slate-100'>
                                                 <BsCalendar3 className='w-6' /> {mesNombre} | {anio}
@@ -74,7 +77,7 @@ export default function Experiencias() {
                                     <p className='my-2 dark:text-slate-100 text-gray-900'>{descripcion}</p>
                                     <div className='flex flex-wrap gap-2'>
                                         {habilidades.map((h) => (
-                                            <Chip key={h} color='warning' size='sm' className='opacity-80 cursor-default'>
+                                            <Chip key={h} variant='bordered' size='sm' className='opacity-80 cursor-default dark:text-white'>
                                                 {h}
                                             </Chip>
                                         ))}
