@@ -34,7 +34,7 @@ export default function ChatBot() {
         }
     }
 
-    // Crear referencia para el contenedor de mensajes
+    // referencia para el contenedor de mensajes
     const messagesEndRef = useRef<HTMLDivElement>(null)
 
     // Función para hacer scroll hacia el final del chat
@@ -48,13 +48,13 @@ export default function ChatBot() {
         }
     }
 
-    // Hacer scroll cada vez que cambien los mensajes
+    // scroll cada vez que cambien los mensajes
     useEffect(() => {
         scrollToBottom()
     }, [messages])
 
     return (
-        <div className='rounded-lg space-y-3 py-3 bg-slate-100 dark:bg-sky-600 px-2 shadow-lg'>
+        <div className='rounded-lg space-y-3 py-3 bg-slate-100 dark:bg-sky-600 px-2 shadow-lg' id='chat'>
             <ScrollShadow className='h-80 sm:h-96' size={10} ref={messagesEndRef}>
                 <div className='flex-1'>
                     <div className='flex justify-start'>

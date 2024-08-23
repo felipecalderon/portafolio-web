@@ -1,7 +1,4 @@
 import { Image, Switch } from "@nextui-org/react"
-import { FaAirbnb, FaMoon, FaRegMoon, FaRegSun, FaSun } from "react-icons/fa6"
-import { RiZzzLine } from "react-icons/ri"
-import DarkModeSwitcher from "./darkmode"
 type WeatherCondition = "Clouds" | "Thunderstorm" | "Drizzle" | "Rain" | "Snow" | "Atmosphere" | "Clear"
 
 interface WeatherInterface {
@@ -46,7 +43,6 @@ export default function Weather({ weather }: { weather: WeatherInterface }) {
             <Image src={url} alt='Icono del clima' className='w-10 h-10' />
             <p className='text-xs md:text-lg font-light text-center'>Temperatura: {(weather.main.temp - 273.15).toFixed(1)}°C</p>
             <p className='text-xs md:text-lg font-light text-center'>Humedad: {weather.main.humidity}%</p>
-            <DarkModeSwitcher />
         </div>
     )
 }

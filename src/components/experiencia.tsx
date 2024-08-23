@@ -22,7 +22,7 @@ export default function Experiencias() {
 
     return (
         <>
-            <section>
+            <section id='exp'>
                 <h2 className='text-2xl font-semibold mb-4 text-center'>Experiencias</h2>
                 <div className='flex flex-wrap justify-center gap-2 mb-2'>
                     {habilidades.map((h) => (
