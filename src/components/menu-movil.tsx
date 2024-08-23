@@ -23,7 +23,7 @@ export default function FloatingMenuMovil() {
                         <ButtonGroup variant='shadow'>
                             <Button
                                 size='sm'
-                                startContent={<PiUserCircleCheckFill className='text-2xl text-white' />}
+                                startContent={<PiUserCircleCheckFill className='text-lg text-white' />}
                                 radius='full'
                                 className='bg-sky-500 dark:bg-amber-500 text-white'
                                 onClick={() => scrollTo("about")}
@@ -33,15 +33,15 @@ export default function FloatingMenuMovil() {
 
                             <Button
                                 size='sm'
-                                startContent={<GiBrain className='text-2xl text-white' />}
+                                startContent={<GiBrain className='text-lg text-white' />}
                                 radius='full'
                                 className='bg-sky-500 dark:bg-amber-500 text-white'
                                 onClick={() => scrollTo("exp")}
                             >
-                                Experiencias
+                                Proyectos
                             </Button>
                             <Button
-                                startContent={<IoChatbubbles className='text-2xl text-white' />}
+                                startContent={<IoChatbubbles className='text-lg text-white' />}
                                 size='sm'
                                 radius='full'
                                 className='bg-sky-500 dark:bg-amber-500 text-white'
@@ -53,7 +53,7 @@ export default function FloatingMenuMovil() {
                     </li>
                 </ul>
             </nav>
-            <div className='fixed md:hidden top-3 right-3 drop-shadow-md z-40'>
+            <div className='fixed md:hidden bottom-3 right-3 drop-shadow-md z-40'>
                 <DarkModeSwitcher />
             </div>
         </>
