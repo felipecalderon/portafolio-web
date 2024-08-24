@@ -1,22 +1,10 @@
 import { NextRequest, NextResponse } from "next/server"
 import OpenAI from "openai"
 import { ChatCompletionMessageParam } from "openai/resources/index.mjs"
-import { SG_APIKEY } from "@/contants/envs"
-import sendgrid from "@sendgrid/mail"
-
-sendgrid.setApiKey(SG_APIKEY ?? "")
+import { mailPresupuesto } from "./mailPresupuesto"
 
 const ia = new OpenAI({ apiKey: process.env.OPENAIKEY ?? "" })
 const model = process.env.OPENAIMODEL ?? "gpt-4o-mini"
-
-interface DataPresupuesto {
-    nombre: string
-    correo: string
-    ubicacion: string
-    requerimiento: string
-    plazo: string
-    presupuesto: string
-}
 
 export const POST = async (req: NextRequest) => {
     try {
@@ -71,25 +59,11 @@ export const POST = async (req: NextRequest) => {
         if (toolCall) {
             const [fn] = toolCall
             if (fn.function.name === "presupuesto") {
-                const data: DataPresupuesto = JSON.parse(fn.function.arguments)
-                await sendgrid.send({
-                    from: "felipe@geobosques.com",
-                    to: "felipe.calderon321@gmail.com",
-                    subject: `${data.nombre} ha cotizado online`,
-                    replyTo: data.correo,
-                    html: `<p>Un cliente necesita servicios digitales</p>
-                    <p>Nombre: ${data.nombre}</p>
-                    <p>Correo: ${data.correo}</p>
-                    <p>Correo: ${data.ubicacion}</p>
-                    <p>Requermiento: ${data.requerimiento}</p>
-                    <p>Plazo: ${data.plazo}</p>
-                    <p>Presupuesto: ${data.presupuesto}</p>
-                    `,
-                })
+                const { nombre } = await mailPresupuesto(fn.function.arguments)
 
                 return NextResponse.json({
                     role: "assistant",
-                    content: `Muy bien ${data.nombre}, con toda la información que ha proporcionado es más que suficiente para generar un presupuesto, le solicito que aguarde un momento y durante las próximas horas recibirá en su correo la cotización correspondiente, de antemano muchisimas gracias! ¿Hay algo más en lo que pueda ayudarte?`,
+                    content: `Muy bien ${nombre}, con toda la información que ha proporcionado es más que suficiente para generar un presupuesto, le solicito que aguarde un momento y durante las próximas horas recibirá en su correo la cotización correspondiente, de antemano muchisimas gracias! ¿Hay algo más en lo que pueda ayudarte?`,
                 })
             }
         }
