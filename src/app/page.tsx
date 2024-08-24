@@ -23,7 +23,6 @@ export default function Home() {
                 <Experiencias />
                 <Habilidades />
                 <ChatBot />
-                <SocialPages />
             </main>
             <footer className='bg-sky-800 text-white p-4 text-center md:mt-3'>
                 <p>2024 &copy; Felipe Calderón</p>

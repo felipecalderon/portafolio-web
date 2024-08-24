@@ -33,7 +33,7 @@ export default function Experiencias() {
                                 setHabilidad(h)
                             }}
                             color='primary'
-                            radius='full'
+                            radius='sm'
                             size='sm'
                             className='cursor-pointer hover:scale-105 transition-all focus:bg-blue-800'
                         >
@@ -46,7 +46,7 @@ export default function Experiencias() {
                             setHabilidad(null)
                         }}
                         color='primary'
-                        radius='full'
+                        radius='sm'
                         size='sm'
                         className='cursor-pointer hover:scale-105 transition-all focus:bg-blue-800'
                     >
@@ -61,8 +61,8 @@ export default function Experiencias() {
                                 <div key={descripcion} className='p-4 bg-gray-50 dark:bg-sky-600 rounded-lg shadow-sm'>
                                     <div className='flex gap-2 justify-between'>
                                         <div>
-                                            <h3 className='text-lg font-bold text-blue-800 dark:text-slate-50'>{nombre}</h3>
-                                            <Link href={web} target='_blank' className='flex gap-1 items-center text-blue-600 dark:text-slate-100'>
+                                            <h3 className='text-lg font-bold text-blue-800 dark:text-amber-300'>{nombre}</h3>
+                                            <Link href={web} target='_blank' className='flex gap-1 items-center text-blue-600 dark:text-amber-300'>
                                                 <AiOutlineGlobal className='w-6' />{" "}
                                                 <p>
                                                     {lugar} <span className='text-sm'>(ver sitio)</span>
@@ -75,9 +75,9 @@ export default function Experiencias() {
                                         <ModalImg img={img} />
                                     </div>
                                     <p className='my-2 dark:text-slate-100 text-gray-900'>{descripcion}</p>
-                                    <div className='flex flex-wrap gap-2'>
+                                    <div className='flex flex-wrap gap-1'>
                                         {habilidades.map((h) => (
-                                            <Chip key={h} variant='bordered' size='sm' className='opacity-80 cursor-default dark:text-white'>
+                                            <Chip key={h} variant='flat' radius='sm' size='sm' className='opacity-80 cursor-default dark:text-white'>
                                                 {h}
                                             </Chip>
                                         ))}

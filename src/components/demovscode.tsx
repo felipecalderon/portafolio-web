@@ -1,10 +1,29 @@
+"use client"
 import { Source_Code_Pro } from "next/font/google"
+import { useEffect, useState } from "react"
 import style from "./styles.module.css"
 
 const font = Source_Code_Pro({ weight: "400", subsets: ["latin"] })
 
 export default function VSCodeDemostracion() {
     const lines = preCode.split("\n").length
+    const [codigo, setCodigo] = useState("")
+    useEffect(() => {
+        let index = 0
+        const interval = setInterval(() => {
+            // Aumenta el código mostrado carácter por carácter
+            setCodigo(preCode.slice(0, index))
+            index++
+
+            // Si se llega al final del código, limpiar el intervalo
+            if (index > preCode.length) {
+                clearInterval(interval)
+            }
+        }, 10)
+
+        // Limpiar el intervalo al desmontar el componente
+        return () => clearInterval(interval)
+    }, [])
     return (
         <div className='overflow-hidden hidden sm:block absolute w-full'>
             <div className='flex flex-col bg-slate-50 dark:bg-slate-900 dark:text-[#d4d4d4] text-black font-mono cursor-default difuminado transform'>
@@ -46,7 +65,7 @@ export default function VSCodeDemostracion() {
 
                             <pre
                                 className={`whitespace-pre-wrap text-black dark:text-[#dcdcdc] text-sm ${font}`}
-                                dangerouslySetInnerHTML={{ __html: preCode }}
+                                dangerouslySetInnerHTML={{ __html: codigo }}
                             />
                         </div>
                     </div>

@@ -37,12 +37,12 @@ export default function Weather({ weather }: { weather: WeatherInterface }) {
     const url = `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`
     return (
         <div className='flex flex-row items-center gap-2 justify-center md:space-x-2 py-1 dark:bg-sky-900 bg-amber-500/80 z-20'>
-            <p className='text-xs md:text-lg font-light text-center'>{weather.name}</p>
-            <p className='text-xs md:text-lg font-thin text-center'>|</p>
-            <p className='text-xs md:text-lg font-light text-center'>{checkClima(weather.weather[0].main)}</p>
-            <Image src={url} alt='Icono del clima' className='w-10 h-10' />
-            <p className='text-xs md:text-lg font-light text-center'>Temperatura: {(weather.main.temp - 273.15).toFixed(1)}°C</p>
-            <p className='text-xs md:text-lg font-light text-center'>Humedad: {weather.main.humidity}%</p>
+            <p className='text-xs md:text-base font-light text-center'>{weather.name}</p>
+            <p className='text-xs md:text-base font-thin text-center'>|</p>
+            <p className='text-xs md:text-base font-light text-center'>{checkClima(weather.weather[0].main)}</p>
+            <Image src={url} alt='Icono del clima' className='w-10 h-10 shadow-inner shadow-white bg-white/40 rounded-full' />
+            <p className='text-xs md:text-base font-light text-center'>Temperatura: {(weather.main.temp - 273.15).toFixed(1)}°C</p>
+            <p className='text-xs md:text-base font-light text-center'>Humedad: {weather.main.humidity}%</p>
         </div>
     )
 }

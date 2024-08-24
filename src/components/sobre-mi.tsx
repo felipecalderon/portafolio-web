@@ -2,6 +2,7 @@ import { Button } from "@nextui-org/react"
 import Link from "next/link"
 import { GiStarsStack } from "react-icons/gi"
 import { RiKakaoTalkFill } from "react-icons/ri"
+import SocialPages from "./socials"
 
 export default function SobreMi() {
     return (
@@ -9,6 +10,7 @@ export default function SobreMi() {
             <h1 className='text-3xl font-bold drop-shadow-md shadow-black'>Felipe Calderón Espinoza</h1>
             <p className='mt-2 text-xl'>Desarrollador Web FullStack</p>
             <p className='mt-1 text-xs uppercase'>Landing page | Ecommerce | Blogs | Sistemas | Apps</p>
+            <SocialPages />
             <p className='text-xs uppercase'>Experto en diseño web e implementación de E-commerce (tiendas en línea).</p>
             <p className='text-sm text-pretty'>
                 ¡Desde Chile para el Mundo! Tengo 32 años, he trabajado de forma independiente hace más de 8 años, fundador y cofundador de varias pymes locales
