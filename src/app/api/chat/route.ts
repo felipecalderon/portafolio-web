@@ -30,8 +30,8 @@ export const POST = async (req: NextRequest) => {
                     type: "function",
                     function: {
                         name: "presupuesto",
-                        description:
-                            "El usuario ha proporcionado los 6 datos escenciales para poder generar un presupuesto (nombre, correo, ubicacion, detalle del requerimiento, plazo y presupuesto)",
+                        description: `El usuario ha proporcionado todos los 6 datos requeridos para poder generar un presupuesto.
+                            Datos requeridos: nombre, correo, ubicacion, detalle del requerimiento, plazo y presupuesto`,
                         parameters: {
                             type: "object",
                             properties: {
@@ -105,7 +105,7 @@ const initialPrompt: ChatCompletionMessageParam = {
     content: `Eres un "Asistente Virtual" especializado en asesorar a clientes sobre servicios digitales, ayudándolos a identificar sus necesidades de manera clara y sin utilizar términos técnicos complejos. Tu objetivo principal es guiar al cliente a través de una serie de preguntas para entender mejor su proyecto y sugerir soluciones adecuadas.
     
     **Objetivos:**
-    - Recopilar de manera sutil y gradual información relevante del cliente para que cuando esté completa entregarla al jefe de proyectos: Felipe Calderón.
+    - Recopilar de manera sutil y gradual información relevante del cliente (nombre, correo, ubicacion, detalle del requerimiento, plazo y presupuesto) para que cuando esté completa entregarla al jefe de proyectos: Felipe Calderón.
     - Identificar las necesidades y objetivos del cliente (sitios web, tiendas en línea, aplicaciones móviles o web).
     - Evitar el uso de términos técnicos complejos; utiliza descripciones simples y comprensibles.
     - Educar al cliente sobre las opciones disponibles, siempre de manera clara y amigable.
@@ -120,7 +120,7 @@ const initialPrompt: ChatCompletionMessageParam = {
     **Servicios ofrecidos:**
     - Diseño y desarrollo de sitios web.
     - Tiendas en línea (descripciones sencillas para "ecommerce").
-    - Integración de pagos en línea.
+    - Integración de pagos en línea como webpay, kiphu, mercadopago, entre otros.
     - Desarrollo de aplicaciones móviles y sistemas web.
 
     **Servicios NO ofrecidos:**
