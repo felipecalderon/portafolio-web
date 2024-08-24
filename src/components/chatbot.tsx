@@ -54,48 +54,54 @@ export default function ChatBot() {
     }, [messages])
 
     return (
-        <div className='rounded-lg space-y-3 py-3 bg-slate-100 dark:bg-sky-600 px-2 shadow-lg' id='chat'>
-            <ScrollShadow className='h-80 sm:h-96' size={10} ref={messagesEndRef}>
-                <div className='flex-1'>
-                    <div className='flex justify-start'>
-                        <div className='p-3 rounded-lg max-w-xs break-words bg-amber-100 dark:bg-sky-700 text-gray-800 dark:text-slate-100'>
-                            <p className='text-xs italic'>Asesor Digital</p>
-                            <p>¡Hola, conversemos! ¿Que necesitas?</p>
-                        </div>
-                    </div>
-                    {messages.map((message) => (
-                        <div key={message.content as string} className={`flex my-3 ${message.role === "user" ? "justify-end" : "justify-start"}`}>
-                            <div
-                                className={`p-3 rounded-lg max-w-xs break-words ${
-                                    message.role === "user"
-                                        ? "bg-sky-200 dark:bg-amber-600 text-gray-800 dark:text-slate-100"
-                                        : "bg-amber-100 dark:bg-sky-700 text-gray-800 dark:text-slate-100"
-                                }`}
-                            >
-                                {message.role === "user" ? (
-                                    <p className='text-xs italic text-righ w-fullt'>Cliente</p>
-                                ) : (
-                                    <p className='text-xs italic'>Asesor Digital</p>
-                                )}
-                                <div dangerouslySetInnerHTML={{ __html: marked(message.content as string) }} />
+        <div id='chat'>
+            <h2 className='text-2xl font-semibold text-center mb-2'>¿Qué esperas para transformar tus ideas en realidad?</h2>
+            <p className='text-center mb-4 px-6'>
+                Aclara todas tus dudas en esta cajita de mensajería y unamos fuerzas para construir algo verdaderamente increíble.
+            </p>
+            <div className='rounded-lg space-y-3 py-3 bg-slate-100 dark:bg-sky-600 px-2 shadow-lg'>
+                <ScrollShadow className='h-80 sm:h-96' size={10} ref={messagesEndRef}>
+                    <div className='flex-1'>
+                        <div className='flex justify-start'>
+                            <div className='p-3 rounded-lg max-w-xs break-words bg-amber-100 dark:bg-sky-700 text-gray-800 dark:text-slate-100'>
+                                <p className='text-xs italic'>Consultor virtual</p>
+                                <p>¡Hola, conversemos! ¿Que necesitas?</p>
                             </div>
                         </div>
-                    ))}
+                        {messages.map((message) => (
+                            <div key={message.content as string} className={`flex my-3 ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+                                <div
+                                    className={`p-3 rounded-lg max-w-xs break-words ${
+                                        message.role === "user"
+                                            ? "bg-sky-200 dark:bg-amber-600 text-gray-800 dark:text-slate-100"
+                                            : "bg-amber-100 dark:bg-sky-700 text-gray-800 dark:text-slate-100"
+                                    }`}
+                                >
+                                    {message.role === "user" ? (
+                                        <p className='text-xs italic text-righ w-fullt'>Cliente</p>
+                                    ) : (
+                                        <p className='text-xs italic'>Consultor virtual</p>
+                                    )}
+                                    <div dangerouslySetInnerHTML={{ __html: marked(message.content as string) }} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </ScrollShadow>
+                <div className='flex flex-row justify-center gap-2'>
+                    <Input
+                        type='text'
+                        color='warning'
+                        radius='lg'
+                        placeholder={loading ? "...Cargando" : "Para enviar presiona ENTER o ->"}
+                        classNames={{
+                            description: "#000",
+                        }}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
+                    />
                 </div>
-            </ScrollShadow>
-            <div className='flex flex-row justify-center gap-2'>
-                <Input
-                    type='text'
-                    color='warning'
-                    radius='lg'
-                    placeholder={loading ? "...Cargando" : "Para enviar presiona ENTER o ->"}
-                    classNames={{
-                        description: "#000",
-                    }}
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-                />
             </div>
         </div>
     )

@@ -30,7 +30,15 @@ export default function FloatingMenuMovil() {
                             >
                                 Sobre mí
                             </Button>
-
+                            <Button
+                                startContent={<IoChatbubbles className='text-lg text-white' />}
+                                size='sm'
+                                radius='full'
+                                className='bg-sky-500 dark:bg-amber-500 text-white'
+                                onClick={() => scrollTo("chat")}
+                            >
+                                Hablemos
+                            </Button>
                             <Button
                                 size='sm'
                                 startContent={<GiBrain className='text-lg text-white' />}
@@ -39,15 +47,6 @@ export default function FloatingMenuMovil() {
                                 onClick={() => scrollTo("exp")}
                             >
                                 Proyectos
-                            </Button>
-                            <Button
-                                startContent={<IoChatbubbles className='text-lg text-white' />}
-                                size='sm'
-                                radius='full'
-                                className='bg-sky-500 dark:bg-amber-500 text-white'
-                                onClick={() => scrollTo("chat")}
-                            >
-                                Contacto
                             </Button>
                         </ButtonGroup>
                     </li>

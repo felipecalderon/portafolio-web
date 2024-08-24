@@ -23,7 +23,8 @@ export default function Experiencias() {
     return (
         <>
             <section id='exp'>
-                <h2 className='text-2xl font-semibold mb-4 text-center'>Experiencias</h2>
+                <h2 className='text-2xl font-semibold text-center mb-2'>Proyectos reales</h2>
+                <p className='text-center mb-4 px-6'>Cada desarrollo es una experiencia particular y enriquecedora.</p>
                 <div className='flex flex-wrap justify-center gap-2 mb-2'>
                     {habilidades.map((h) => (
                         <Button

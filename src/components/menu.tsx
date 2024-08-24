@@ -28,16 +28,16 @@ export default function FloatingMenuDesktop() {
                     </Tooltip>
                 </li>
                 <li>
-                    <Tooltip content='Experiencias y proyectos' placement='left' shadow='lg' size='lg' showArrow>
-                        <Button isIconOnly size='lg' className='bg-sky-500 dark:bg-amber-500' onClick={() => scrollTo("exp")}>
-                            <GiBrain className='text-2xl text-white' />
+                    <Tooltip content='Conversemos' placement='left' shadow='lg' size='lg' showArrow>
+                        <Button isIconOnly size='lg' className='bg-sky-500 dark:bg-amber-500' onClick={() => scrollTo("chat")}>
+                            <IoChatbubbles className='text-2xl text-white' />
                         </Button>
                     </Tooltip>
                 </li>
                 <li>
-                    <Tooltip content='Conversemos' placement='left' shadow='lg' size='lg' showArrow>
-                        <Button isIconOnly size='lg' className='bg-sky-500 dark:bg-amber-500' onClick={() => scrollTo("habs")}>
-                            <IoChatbubbles className='text-2xl text-white' />
+                    <Tooltip content='Experiencias y proyectos' placement='left' shadow='lg' size='lg' showArrow>
+                        <Button isIconOnly size='lg' className='bg-sky-500 dark:bg-amber-500' onClick={() => scrollTo("exp")}>
+                            <GiBrain className='text-2xl text-white' />
                         </Button>
                     </Tooltip>
                 </li>
