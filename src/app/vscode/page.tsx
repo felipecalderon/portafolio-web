@@ -1,4 +1,4 @@
-import VSCodeDemostracion from "@/components/demovscode"
+import VSCodeDemostracion from "@/components/vscode/demovscode"
 import style from "@/components/styles.module.css"
 
 export default function VSCodePage() {

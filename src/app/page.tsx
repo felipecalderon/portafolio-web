@@ -1,11 +1,11 @@
 import ChatBot from "@/components/chatbot"
-import VSCodeDemostracion from "@/components/demovscode"
 import Experiencias from "@/components/experiencia"
 import Habilidades from "@/components/habilidades"
 import HeaderBottom from "@/components/header-bottom"
 import HeaderTop from "@/components/header-top"
 import Clima from "@/components/ipguide"
 import SobreMi from "@/components/sobre-mi"
+import VSCodeDemostracion from "@/components/vscode/demovscode"
 
 export default function Home() {
     return (

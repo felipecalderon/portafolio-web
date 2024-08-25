@@ -33,7 +33,7 @@ export default function SocialPages() {
                 href='mailto:felipe.calderon321@gmail.com?Subject=Solicito un presupuesto de desarrollo digital'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='inline-flex gap-1 items-center py-1 px-2 bg-sky-700 dark:bg-slate-100 rounded-lg'
+                className='inline-flex md:hidden gap-1 items-center py-1 px-2 bg-sky-700 dark:bg-slate-100 rounded-lg'
             >
                 <MdMarkEmailRead /> Correo
             </a>
