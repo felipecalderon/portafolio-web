@@ -55,7 +55,8 @@ export const chatCode = `// Envío de mensajes chatbot
 export const readmeCode = `<span class=${style.keyword}># Transformemos tus ideas en realidad 🚀</span>
 
 <span class=${style.keyword}>¿Tienes una idea en mente?</span>
-No dudes en escribir en esta cajita de mensajería. Unamos fuerzas para construir algo verdaderamente increíble. 🤝
+No dudes en escribir en la cajita de mensajería. 
+Unamos fuerzas para construir algo verdaderamente increíble. 🤝
 
 <span class=${style.keyword}>Porque cada desarrollo es una experiencia única y enriquecedora. 🌟</span>
 
