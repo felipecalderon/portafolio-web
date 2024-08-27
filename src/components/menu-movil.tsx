@@ -4,6 +4,7 @@ import { GiBrain } from "react-icons/gi"
 import { IoChatbubbles } from "react-icons/io5"
 import { PiUserCircleCheckFill } from "react-icons/pi"
 import DarkModeSwitcher from "./darkmode"
+import { FaUsers } from "react-icons/fa6"
 
 export default function FloatingMenuMovil() {
     const scrollTo = (id: string) => {
@@ -47,6 +48,15 @@ export default function FloatingMenuMovil() {
                                 onClick={() => scrollTo("exp")}
                             >
                                 Proyectos
+                            </Button>
+                            <Button
+                                size='sm'
+                                startContent={<FaUsers className='text-lg text-white' />}
+                                radius='full'
+                                className='bg-sky-500 dark:bg-amber-500 text-white'
+                                onClick={() => scrollTo("exp")}
+                            >
+                                Partners
                             </Button>
                         </ButtonGroup>
                     </li>

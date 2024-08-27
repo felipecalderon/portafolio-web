@@ -4,6 +4,7 @@ import Habilidades from "@/components/habilidades"
 import HeaderBottom from "@/components/header-bottom"
 import HeaderTop from "@/components/header-top"
 import Clima from "@/components/ipguide"
+import Partners from "@/components/partners"
 import SobreMi from "@/components/sobre-mi"
 import VSCodeDemostracion from "@/components/vscode/demovscode"
 
@@ -22,6 +23,7 @@ export default function Home() {
                 <ChatBot />
                 <Experiencias />
                 <Habilidades />
+                <Partners />
             </main>
             <footer className='bg-sky-800 text-white p-4 text-center md:mt-3'>
                 <p>2024 &copy; Felipe Calderón</p>

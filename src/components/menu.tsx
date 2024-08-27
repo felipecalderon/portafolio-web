@@ -1,11 +1,10 @@
 "use client"
 import { Button, Tooltip } from "@nextui-org/react"
-import Link from "next/link"
-import { BiSolidBrain } from "react-icons/bi"
 import { GiBrain } from "react-icons/gi"
 import { IoChatbubbles } from "react-icons/io5"
 import { PiUserCircleCheckFill } from "react-icons/pi"
 import DarkModeSwitcher from "./darkmode"
+import { FaUsers } from "react-icons/fa6"
 
 export default function FloatingMenuDesktop() {
     const scrollTo = (id: string) => {
@@ -38,6 +37,13 @@ export default function FloatingMenuDesktop() {
                     <Tooltip content='Experiencias y proyectos' placement='left' shadow='lg' size='lg' showArrow>
                         <Button isIconOnly size='lg' className='bg-sky-500 dark:bg-amber-500' onClick={() => scrollTo("exp")}>
                             <GiBrain className='text-2xl text-white' />
+                        </Button>
+                    </Tooltip>
+                </li>
+                <li>
+                    <Tooltip content='Partners' placement='left' shadow='lg' size='lg' showArrow>
+                        <Button isIconOnly size='lg' className='bg-sky-500 dark:bg-amber-500' onClick={() => scrollTo("partners")}>
+                            <FaUsers className='text-2xl text-white' />
                         </Button>
                     </Tooltip>
                 </li>
