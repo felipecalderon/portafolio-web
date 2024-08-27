@@ -56,7 +56,7 @@ export const POST = async (req: NextRequest) => {
                 },
             ],
         })
-        saveDB(ip, [...chats, openaiRes.choices[0].message]) // sin await para que no ralentezca la app
+        await saveDB(ip, [...chats, openaiRes.choices[0].message])
         const toolCall = openaiRes.choices[0].message.tool_calls
         if (toolCall) {
             const [fn] = toolCall
