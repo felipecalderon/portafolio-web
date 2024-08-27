@@ -43,7 +43,7 @@ export default function VSCodeDemostracion() {
     }, [])
 
     return (
-        <div className='overflow-hidden hidden sm:block absolute w-full'>
+        <div className='overflow-hidden w-[150%] md:w-full absolute'>
             <div className='flex flex-col bg-slate-50 dark:bg-slate-900 dark:text-[#d4d4d4] text-black font-mono cursor-default difuminado transform'>
                 <div className='flex items-center h-10 bg-gray-200 dark:bg-gray-800 px-2 text-sm shadow-xl'>
                     <span className='menu-item mr-4 hover:font-black'>File</span>
