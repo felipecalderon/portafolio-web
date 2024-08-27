@@ -56,6 +56,7 @@ export const saveDB = async (collectionName: string, newChats: ChatCompletionMes
             existingDocument.data.push(...uniqueNewChats)
             existingDocument.updatedAt = new Date() // Actualizar la fecha de última modificación
             await existingDocument.save()
+            console.log(`Chat guardado`)
         } else {
             // Si no existe, crear un nuevo documento con los chats
             const newDocument = new DynamicModel({
@@ -64,6 +65,7 @@ export const saveDB = async (collectionName: string, newChats: ChatCompletionMes
                 updatedAt: new Date(),
             })
             await newDocument.save()
+            console.log(`Chat guardado`)
         }
     } catch (error) {
         console.error("Error saving data:", error)
