@@ -18,45 +18,25 @@ export default function FloatingMenuMovil() {
 
     return (
         <>
-            <nav className='md:hidden fixed bottom-3 w-full z-30'>
+            <nav className='md:hidden fixed bottom-1 shadow-2xl w-full z-30'>
                 <ul className='flex flex-row justify-center items-center gap-2'>
                     <li>
-                        <ButtonGroup variant='shadow'>
-                            <Button
-                                size='sm'
-                                startContent={<PiUserCircleCheckFill className='text-lg text-white' />}
-                                radius='full'
-                                className='bg-sky-500 dark:bg-amber-500 text-white'
-                                onClick={() => scrollTo("about")}
-                            >
-                                Sobre mí
+                        <ButtonGroup variant='shadow' radius='md' size='md'>
+                            <Button className='bg-sky-500 dark:bg-amber-500 text-white text-xs inline-flex flex-col' onPress={() => scrollTo("about")}>
+                                <PiUserCircleCheckFill className='text-lg text-white translate-y-1' />
+                                <span className='-translate-y-1'>Sobre mí</span>
                             </Button>
-                            <Button
-                                startContent={<IoChatbubbles className='text-lg text-white' />}
-                                size='sm'
-                                radius='full'
-                                className='bg-sky-500 dark:bg-amber-500 text-white'
-                                onClick={() => scrollTo("chat")}
-                            >
-                                Hablemos
+                            <Button className='bg-sky-500 dark:bg-amber-500 text-white text-xs inline-flex flex-col' onPress={() => scrollTo("chat")}>
+                                <IoChatbubbles className='text-lg text-white translate-y-1' />
+                                <span className='-translate-y-1'>Hablemos</span>
                             </Button>
-                            <Button
-                                size='sm'
-                                startContent={<GiBrain className='text-lg text-white' />}
-                                radius='full'
-                                className='bg-sky-500 dark:bg-amber-500 text-white'
-                                onClick={() => scrollTo("exp")}
-                            >
-                                Proyectos
+                            <Button className='bg-sky-500 dark:bg-amber-500 text-white text-xs inline-flex flex-col' onPress={() => scrollTo("exp")}>
+                                <GiBrain className='text-lg text-white translate-y-1' />
+                                <span className='-translate-y-1'>Proyectos</span>
                             </Button>
-                            <Button
-                                size='sm'
-                                startContent={<FaUsers className='text-lg text-white' />}
-                                radius='full'
-                                className='bg-sky-500 dark:bg-amber-500 text-white'
-                                onClick={() => scrollTo("exp")}
-                            >
-                                Partners
+                            <Button className='bg-sky-500 dark:bg-amber-500 text-white text-xs inline-flex flex-col' onPress={() => scrollTo("partners")}>
+                                <FaUsers className='text-lg text-white translate-y-1' />
+                                <span className='-translate-y-1'>Partners</span>
                             </Button>
                         </ButtonGroup>
                     </li>

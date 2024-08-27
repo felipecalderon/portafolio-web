@@ -10,7 +10,7 @@ export default function Partners() {
                 Porque siempre se necesitarán hábiles manos para hacer cosas grandes, no siempre basta con uno mismo, cada uno aporta una visión y expertiz muy
                 particular en cada proyecto.
             </p>
-            <div className='grid grid-cols-2 gap-2'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
                 {partners.map((p) => (
                     <Card shadow='sm' className='dark:bg-sky-600' key={p.name}>
                         <CardHeader className='flex gap-3'>

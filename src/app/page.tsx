@@ -27,7 +27,7 @@ export default function Home() {
             </main>
             <footer className='bg-sky-800 text-white p-4 text-center md:mt-3'>
                 <p>2024 &copy; Felipe Calderón</p>
-                <p className='max-w-3xl mx-auto px-4 text-pretty text-xs font-light pb-9 md:pb-2'>
+                <p className='max-w-3xl mx-auto px-4 text-pretty text-xs font-light pb-20 md:pb-2'>
                     Todos los derechos reservados sobre las imágenes y textos personales. Los íconos y otros elementos gráficos utilizados en este sitio son
                     propiedad de sus respectivos autores y están sujetos a las licencias internacionales correspondientes. La reproducción de imágenes y textos
                     personales sin permiso está prohibida, el uso no autorizado puede resultar en acciones legales.
