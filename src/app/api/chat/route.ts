@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import OpenAI from "openai"
 import { ChatCompletionMessageParam } from "openai/resources/index.mjs"
 import { mailPresupuesto } from "./mailPresupuesto"
+import { saveDB } from "@/utils/save-db"
 
 const ia = new OpenAI({ apiKey: process.env.OPENAIKEY ?? "" })
 const model = process.env.OPENAIMODEL ?? "gpt-4o-mini"
@@ -9,7 +10,7 @@ const model = process.env.OPENAIMODEL ?? "gpt-4o-mini"
 export const POST = async (req: NextRequest) => {
     try {
         const { chats }: { chats: ChatCompletionMessageParam[] } = await req.json()
-
+        const ip = req.headers.get("x-forwarded-for") || req.ip || "unknown"
         const openaiRes = await ia.chat.completions.create({
             messages: [initialPrompt, ...chats],
             model: model,
@@ -55,6 +56,7 @@ export const POST = async (req: NextRequest) => {
                 },
             ],
         })
+        saveDB(ip, [...chats, openaiRes.choices[0].message]) // sin await para que no ralentezca la app
         const toolCall = openaiRes.choices[0].message.tool_calls
         if (toolCall) {
             const [fn] = toolCall
