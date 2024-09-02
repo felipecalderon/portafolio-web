@@ -78,7 +78,7 @@ export default function ChatBot() {
                                     }`}
                                 >
                                     {message.role === "user" ? (
-                                        <p className='text-xs italic text-righ w-fullt'>Cliente</p>
+                                        <p className='text-xs italic text-right w-full'>Cliente</p>
                                     ) : (
                                         <p className='text-xs italic'>Consultor virtual</p>
                                     )}
