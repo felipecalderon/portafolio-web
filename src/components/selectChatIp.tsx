@@ -22,7 +22,7 @@ export default function ChatSelectIp({ options }: { options: ResponseChats }) {
             <Select onSelectionChange={handleSelectChange}>
                 {chatsIps.map((option) => {
                     const q = options[option].length
-                    return <SelectItem key={option}>{`${option} (${q})`}</SelectItem>
+                    return <SelectItem key={option}>{`${option.toString()} (${q})`}</SelectItem>
                 })}
             </Select>
             <div className='mt-3'>

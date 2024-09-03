@@ -4,7 +4,9 @@ import { ChatCompletionMessageParam } from "openai/resources/index.mjs"
 type ResponseChats = Record<string, ChatCompletionMessageParam[]>
 
 export default async function ClientesPage() {
-    const res = await fetch(`${URL}/api/chat?key=chats:*`)
+    const res = await fetch(`${URL}/api/chat?key=chats:*`, {
+        cache: "no-store",
+    })
     if (res.ok) {
         const data: ResponseChats = await res.json()
         return (
