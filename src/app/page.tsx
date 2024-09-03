@@ -1,5 +1,6 @@
 import ChatBot from "@/components/chatbot"
 import Experiencias from "@/components/experiencia"
+import FAQs from "@/components/faq"
 import Habilidades from "@/components/habilidades"
 import HeaderBottom from "@/components/header-bottom"
 import HeaderTop from "@/components/header-top"
@@ -24,6 +25,7 @@ export default function Home() {
                 <Experiencias />
                 <Habilidades />
                 <Partners />
+                <FAQs />
             </main>
             <footer className='bg-sky-800 text-white p-4 text-center md:mt-3'>
                 <p>2024 &copy; Felipe Calderón</p>
