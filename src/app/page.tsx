@@ -4,6 +4,7 @@ import FAQs from "@/components/faq"
 import Habilidades from "@/components/habilidades"
 import HeaderBottom from "@/components/header-bottom"
 import HeaderTop from "@/components/header-top"
+import Influencias from "@/components/influencias"
 import Clima from "@/components/ipguide"
 import Partners from "@/components/partners"
 import SobreMi from "@/components/sobre-mi"
@@ -26,6 +27,7 @@ export default function Home() {
                 <Habilidades />
                 <Partners />
                 <FAQs />
+                <Influencias />
             </main>
             <footer className='bg-sky-800 text-white p-4 text-center md:mt-3'>
                 <p>2024 &copy; Felipe Calderón</p>

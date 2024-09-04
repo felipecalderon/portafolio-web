@@ -1,15 +1,15 @@
 "use client"
-import { Accordion, AccordionItem } from "@nextui-org/react"
+import { Accordion, AccordionItem, Avatar, Badge, Link, User } from "@nextui-org/react"
 import { RiExpandLeftRightFill } from "react-icons/ri"
 
 export default function FAQs() {
     return (
-        <div>
+        <div id='faq'>
             <h2 className='text-2xl font-semibold text-center mb-2'>Preguntas frecuentes</h2>
             <p className='text-center mb-4 px-6'>
                 Aclara todas tus dudas antes de contratar, puedes usar la caja de mensajería de arriba para consultas más particulares y enviar tus datos.
             </p>
-            <Accordion variant='shadow' className='dark:bg-sky-600'>
+            <Accordion variant='shadow' className='dark:bg-sky-600' defaultSelectedKeys={"1"}>
                 <AccordionItem indicator={<RiExpandLeftRightFill className='dark:text-white' />} key='1' aria-label='p1' title='¿Cuánto cuesta?'>
                     <div className='space-y-2 pb-3'>
                         <p>No es posible fijar una tarifa exacta porque cada desarrollo es único según las necesidades del cliente.</p>

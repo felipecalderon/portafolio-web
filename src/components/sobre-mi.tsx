@@ -18,7 +18,7 @@ export default function SobreMi() {
                 <span className='text-xs italic'>(venta de licores - 2017)</span> y Ecobabylon{" "}
                 <span className='text-xs italic'>(agencia de turismo - 2017)</span>.
             </p>
-            <p className='italic font-semibold'>
+            <p className='italic font-semibold md:px-24'>
                 Poseo una gran paciencia y capacidad para comprender lógica de negocios, encuentro soluciones sencillas a problemas complejos.
             </p>
             <div className='z-30'>

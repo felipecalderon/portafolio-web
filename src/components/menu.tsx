@@ -5,6 +5,7 @@ import { IoChatbubbles } from "react-icons/io5"
 import { PiUserCircleCheckFill } from "react-icons/pi"
 import DarkModeSwitcher from "./darkmode"
 import { FaUsers } from "react-icons/fa6"
+import { RiQuestionnaireFill } from "react-icons/ri"
 
 export default function FloatingMenuDesktop() {
     const scrollTo = (id: string) => {
@@ -17,7 +18,7 @@ export default function FloatingMenuDesktop() {
     }
 
     return (
-        <nav className='hidden md:block fixed top-1/3 right-0 mr-6'>
+        <nav className='hidden md:block fixed top-1/4 right-0 mr-6'>
             <ul className='flex flex-col gap-6 drop-shadow-xl'>
                 <li>
                     <Tooltip content='Acerca de mí' placement='left' shadow='lg' size='lg' showArrow>
@@ -44,6 +45,13 @@ export default function FloatingMenuDesktop() {
                     <Tooltip content='Partners' placement='left' shadow='lg' size='lg' showArrow>
                         <Button isIconOnly size='lg' className='bg-sky-500 dark:bg-amber-500' onClick={() => scrollTo("partners")}>
                             <FaUsers className='text-2xl text-white' />
+                        </Button>
+                    </Tooltip>
+                </li>
+                <li>
+                    <Tooltip content='Preguntas frecuentes' placement='left' shadow='lg' size='lg' showArrow>
+                        <Button isIconOnly size='lg' className='bg-sky-500 dark:bg-amber-500' onClick={() => scrollTo("faq")}>
+                            <RiQuestionnaireFill className='text-2xl text-white' />
                         </Button>
                     </Tooltip>
                 </li>
