@@ -21,7 +21,7 @@ export default function Home() {
                     <SobreMi />
                 </HeaderBottom>
             </section>
-            <main className='container mx-auto space-y-20 md:space-y-10 md:mt-10 py-8 px-4 max-w-2xl'>
+            <main className='container mx-auto space-y-20 md:space-y-32 md:mt-10 py-8 px-4 max-w-2xl'>
                 <ChatBot />
                 <Experiencias />
                 <Habilidades />
