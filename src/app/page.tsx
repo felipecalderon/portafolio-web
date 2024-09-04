@@ -14,7 +14,7 @@ export default function Home() {
     return (
         <>
             <section className='relative'>
-                <Clima />
+                {/* <Clima /> */}
                 <VSCodeDemostracion />
                 <HeaderTop />
                 <HeaderBottom>
