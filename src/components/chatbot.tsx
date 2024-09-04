@@ -57,7 +57,7 @@ export default function ChatBot() {
         <div id='chat'>
             <h2 className='text-2xl font-semibold text-center mb-2'>¿Qué esperas para transformar tus ideas en realidad?</h2>
             <p className='text-center mb-4 px-6'>
-                Aclara todas tus dudas en esta cajita de mensajería (con inteligencia artifical) y unamos fuerzas para construir algo verdaderamente increíble.
+                Aclara todas tus dudas en esta cajita de mensajería (con inteligencia artificial) y unamos fuerzas para construir algo verdaderamente increíble.
             </p>
             <div className='rounded-lg space-y-3 py-3 bg-slate-100 dark:bg-sky-600 px-2 shadow-lg'>
                 <ScrollShadow className='h-80 sm:h-96' size={10} ref={messagesEndRef}>
