@@ -24,7 +24,7 @@ export default function Influencias() {
                         </Link>
                     }
                     avatarProps={{
-                        src: "https://media.licdn.com/dms/image/v2/D5603AQEvM-ZZFtoJow/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1669322516183?e=1730937600&v=beta&t=F6r6pbWLw84pDZYiFaZCingf4w2_N4Om8UcHoB8lgR8",
+                        src: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/refs/frekkfshfybremfzgqym",
                     }}
                 />
                 <User
@@ -36,7 +36,7 @@ export default function Influencias() {
                         </Link>
                     }
                     avatarProps={{
-                        src: "https://media.licdn.com/dms/image/v2/D4D03AQHigBNGVqRnOA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1723639491706?e=1730937600&v=beta&t=y5Mq8eMcOWUfPzpB-12k_8TwCEzSchW_VsiSeIiATrM",
+                        src: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/refs/xdxt3zuoxo86bqwbvjif",
                     }}
                 />
                 <User
@@ -48,7 +48,7 @@ export default function Influencias() {
                         </Link>
                     }
                     avatarProps={{
-                        src: "https://media.licdn.com/dms/image/v2/C5603AQESM45V0cMFNA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1619015304774?e=1730937600&v=beta&t=01K-Laqp0MrcUqFvQqZCiX4ZXwcgup0mAN6UGpZj8lM",
+                        src: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/refs/f09hf6xxpkidh7cn4gac",
                     }}
                 />
                 <User
@@ -60,7 +60,7 @@ export default function Influencias() {
                         </Link>
                     }
                     avatarProps={{
-                        src: "https://media.licdn.com/dms/image/v2/D4E03AQF_YkpjXs498A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1711022864058?e=1730937600&v=beta&t=u7be8t8raJSbVJygMmj3eUW9hriq5MameFtPJwZCyE0",
+                        src: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/refs/povjhzcupsbjihrleftr",
                     }}
                 />
                 <User
@@ -78,7 +78,7 @@ export default function Influencias() {
                         </Link>
                     }
                     avatarProps={{
-                        src: "https://media.licdn.com/dms/image/v2/D4D03AQHP8iXoi2cWrA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1684966463885?e=1730937600&v=beta&t=2M_RJzNYKTC5fRlamnarEIhTKEnFJKgPhz8JZ72_dWk",
+                        src: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/refs/z82rdjqmkxfdeavvvxtg",
                     }}
                 />
             </div>
