@@ -7,8 +7,7 @@ export default function Partners() {
         <div id='partners'>
             <h2 className='text-2xl font-semibold text-center mb-2'>Grandes experiencias: Partners</h2>
             <p className='text-center mb-4 px-6'>
-                Porque siempre se necesitarán hábiles manos para hacer cosas grandes, no siempre basta con uno mismo, cada uno aporta una visión y expertiz muy
-                particular en cada proyecto.
+                A veces se puede trabajar independiente, otras veces los proyectos son tan grandes que se necesita un equipo, validado y con amplia experiencia:
             </p>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
                 {partners.map((p) => (
@@ -47,7 +46,7 @@ export default function Partners() {
                 ))}
             </div>
             <p className='text-center text-sm italic mt-4 px-6'>
-                Dependiendo de las necesidades del cliente y el tamaño del proyecto se podría necesitar apoyo de partners.
+                Dependiendo de las necesidades del cliente y el tamaño del proyecto se podría necesitar apoyo de partners, a elección del mismo cliente.
             </p>
         </div>
     )

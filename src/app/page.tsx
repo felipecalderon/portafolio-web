@@ -20,7 +20,7 @@ export default function Home() {
                     <SobreMi />
                 </HeaderBottom>
             </section>
-            <main className='container mx-auto space-y-20 md:space-y-32 md:mt-10 py-8 px-4 max-w-2xl'>
+            <main className='container mx-auto space-y-20 md:space-y-40 md:mt-10 py-8 px-4 max-w-2xl'>
                 <ChatBot />
                 <Experiencias />
                 <Habilidades />
@@ -32,8 +32,7 @@ export default function Home() {
                 <p>2024 &copy; Felipe Calderón</p>
                 <p className='max-w-3xl mx-auto px-4 text-pretty text-xs font-light pb-20 md:pb-2'>
                     Todos los derechos reservados sobre las imágenes y textos personales. Los íconos y otros elementos gráficos utilizados en este sitio son
-                    propiedad de sus respectivos autores y están sujetos a las licencias internacionales correspondientes. La reproducción de imágenes y textos
-                    personales sin permiso está prohibida.
+                    propiedad de sus respectivos autores y están sujetos a las licencias internacionales correspondientes.
                 </p>
             </footer>
         </>
