@@ -5,8 +5,7 @@ export default function Influencias() {
         <div>
             <h2 className='text-2xl font-semibold text-center mb-2'>Influencias en mi desarrollo profesional</h2>
             <p className='text-center mb-4 px-6 text-pretty'>
-                No podría haber llegado hasta aquí sin las tutorías obtenidas por aquellos que se esmeran con dedicación en la enseñanza, aunque soy un completo
-                desconocido para ellos, debo agradecer porque han aportado más valor que cualquier bootcamp, instituto o grupo de estudio.
+                No podría haber llegado hasta aquí sin las tutorías obtenidas por aquellos que se esmeran con dedicación en la enseñanza:
             </p>
             <div className='flex flex-wrap gap-2 justify-center'>
                 <User
