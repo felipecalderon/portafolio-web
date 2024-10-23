@@ -13,14 +13,14 @@ export default function SocialPages() {
             >
                 <FaGithub /> GitHub
             </Link>
-            <Link
+            {/* <Link
                 href='https://www.facebook.com/felipecalderon321/'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='inline-flex gap-1 items-center py-1 px-2 bg-sky-700 dark:bg-slate-100 rounded-lg'
             >
                 <FaFacebookF /> Facebook
-            </Link>
+            </Link> */}
             <Link
                 href='https://www.linkedin.com/in/felipecalderone/'
                 target='_blank'
@@ -29,14 +29,14 @@ export default function SocialPages() {
             >
                 <FaLinkedin /> LinkedIn
             </Link>
-            <a
+            <Link
                 href='mailto:felipe.calderon321@gmail.com?Subject=Solicito un presupuesto de desarrollo digital'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='inline-flex md:hidden gap-1 items-center py-1 px-2 bg-sky-700 dark:bg-slate-100 rounded-lg'
+                className='inline-flex gap-1 items-center py-1 px-2 bg-sky-700 dark:bg-slate-100 rounded-lg'
             >
                 <MdMarkEmailRead /> Correo
-            </a>
+            </Link>
         </div>
     )
 }

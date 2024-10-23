@@ -10,7 +10,7 @@ export const POST = async (req: NextRequest) => {
         const data: ContactForm = await req.json()
         // mensaje al admin (yo)
         const mailAdmin = await sendgrid.send({
-            from: "felipe@geobosques.com",
+            from: "hola@felipe.bio",
             to: "felipe.calderon321@gmail.com",
             subject: `Un cliente ha enviado un mensaje: ${data.asunto}`,
             replyTo: data.correo,
@@ -20,7 +20,7 @@ export const POST = async (req: NextRequest) => {
         })
 
         const mailUser = await sendgrid.send({
-            from: "felipe@geobosques.com",
+            from: "hola@felipe.bio",
             to: data.correo,
             subject: `Gracias ${data.nombre} por enviar tu mensaje`,
             replyTo: "felipe.calderon321@gmail.com",

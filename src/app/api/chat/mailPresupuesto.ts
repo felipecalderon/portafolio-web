@@ -15,7 +15,7 @@ interface DataPresupuesto {
 export const mailPresupuesto = async (args: string) => {
     const data: DataPresupuesto = JSON.parse(args)
     const mailtoAdmin = {
-        from: "felipe@geobosques.com",
+        from: "hola@felipe.bio",
         to: "felipe.calderon321@gmail.com",
         subject: `${data.nombre} ha cotizado online`,
         replyTo: data.correo,
@@ -30,7 +30,7 @@ export const mailPresupuesto = async (args: string) => {
     }
 
     const mailtoClient = {
-        from: "felipe@geobosques.com",
+        from: "hola@felipe.bio",
         to: data.correo,
         subject: `${data.nombre}, muchas gracias por cotizar online.`,
         replyTo: "felipe.calderon321@gmail.com",

@@ -11,11 +11,11 @@ export default function ChatBot() {
     const [input, setInput] = useState("")
     const [loading, setLoading] = useState(false)
 
-    const handleSendMessage = async () => {
+    const handleSendMessage = async (content: string) => {
         try {
             setLoading(true)
             setInput("")
-            const msgUser: ChatCompletionMessageParam = { role: "user", content: input }
+            const msgUser: ChatCompletionMessageParam = { role: "user", content }
             setMessages([...messages, msgUser])
             const res = await fetch(`${URL}/api/chat`, {
                 method: "POST",
@@ -55,7 +55,6 @@ export default function ChatBot() {
 
     return (
         <div id='chat'>
-            <h2 className='text-2xl font-semibold text-center mb-2'>¿Qué esperas para transformar tus ideas en realidad?</h2>
             <p className='text-center mb-4 px-6'>
                 Aclara todas tus dudas en esta cajita de mensajería (con inteligencia artificial) y unamos fuerzas para construir algo verdaderamente increíble.
             </p>
@@ -87,19 +86,51 @@ export default function ChatBot() {
                             </div>
                         ))}
                     </div>
+                    {messages.length === 0 && (
+                        <div className='pt-2.5 space-y-2'>
+                            <Button
+                                variant='faded'
+                                color='warning'
+                                onClick={() => {
+                                    handleSendMessage("Quiero hacer una página web simple")
+                                }}
+                            >
+                                1) Quiero hacer una página web simple
+                            </Button>
+                            <Button
+                                variant='faded'
+                                color='warning'
+                                onClick={() => {
+                                    handleSendMessage("Quiero hacer una tienda online para mi negocio")
+                                }}
+                            >
+                                2) Quiero hacer una tienda online para mi negocio
+                            </Button>
+                            <Button
+                                variant='faded'
+                                color='warning'
+                                onClick={() => {
+                                    handleSendMessage("Quiero hacer una aplicación a medida")
+                                }}
+                            >
+                                3) Quiero hacer una aplicación a medida
+                            </Button>
+                        </div>
+                    )}
                 </ScrollShadow>
                 <div className='flex flex-row justify-center gap-2'>
                     <Input
                         type='text'
                         color='warning'
                         radius='lg'
+                        maxLength={150}
                         placeholder={loading ? "...Cargando" : "Para enviar presiona ENTER o ->"}
                         classNames={{
                             description: "#000",
                         }}
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                        onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
+                        onKeyDown={(e) => e.key === "Enter" && handleSendMessage(input)}
                     />
                 </div>
             </div>

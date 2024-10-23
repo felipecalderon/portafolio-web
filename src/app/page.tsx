@@ -7,6 +7,7 @@ import HeaderTop from "@/components/header-top"
 import Influencias from "@/components/influencias"
 import Partners from "@/components/partners"
 import SobreMi from "@/components/sobre-mi"
+import ContactTabs from "@/components/tabs"
 import VSCodeDemostracion from "@/components/vscode/demovscode"
 
 export default function Home() {
@@ -21,7 +22,9 @@ export default function Home() {
                 </HeaderBottom>
             </section>
             <main className='container mx-auto space-y-20 md:space-y-40 md:mt-10 py-8 px-4 max-w-2xl'>
-                <ChatBot />
+                <div>
+                    <ContactTabs />
+                </div>
                 <Experiencias />
                 <Habilidades />
                 <Partners />

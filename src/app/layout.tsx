@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] })
 import { GoogleAnalytics } from "@next/third-parties/google"
 import FloatingMenuDesktop from "@/components/menu"
 import FloatingMenuMovil from "@/components/menu-movil"
+import Script from "next/script"
 export const metadata: Metadata = {
     title: "Felipe Calderón | Webmaster",
     description: "Desarrollador FullStack Typescript / React / Astro / Node",
