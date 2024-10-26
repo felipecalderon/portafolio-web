@@ -63,6 +63,24 @@ export default function Influencias() {
                     }}
                 />
                 <User
+                    name='Mariano Villa'
+                    className='bg-white dark:bg-sky-600 rounded-xl px-1 py-2 shadow-sm'
+                    description={
+                        <Link
+                            href='https://www.linkedin.com/in/mariano-luis-villa/'
+                            target='_blank'
+                            size='sm'
+                            isExternal
+                            className='text-sky-900 dark:text-amber-400'
+                        >
+                            /in/mariano-luis-villa/
+                        </Link>
+                    }
+                    avatarProps={{
+                        src: "https://res.cloudinary.com/duwncbe8p/image/upload/f_auto,q_auto/v1/portfolio/partners/bzj5grdzaxofytctomnh",
+                    }}
+                />
+                <User
                     name='José Román Hernández'
                     className='bg-white dark:bg-sky-600 rounded-xl px-1 py-2 shadow-sm'
                     description={
